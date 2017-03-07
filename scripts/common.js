@@ -20,29 +20,27 @@ function makeAccordion(elementSelector) {
     });
 }
 
-function getContentUsingAjax(fileName, elementSelector, sectionName) {
-    pullContent(fileName, elementSelector, 'Extract from handbook', sectionName);
-}
-
-function pullContent(fileName, elementSelector, title, sectionName) {
-    var toBeLoaded = fileName + '.html' + (sectionName == undefined ? '' : ' #' + sectionName);
-    var directLink = 'handbook.html#'+fileName;
-    var linkNotice = '<span class="important">{Some links in this embedded content box might not work. ' +
-        'If you need to follow the links, please go to the <a href="' + directLink + '" target="_blank">relevant section</a> ' +
-        'of the handbook instead}</span>';
-    $(elementSelector).html('<img class="embedded-link-loading-img" src="../images/ajax-preload.gif" alt="Loading...">');
-    $(elementSelector).load(toBeLoaded, function(response, status, xhr) {
-        if (status == 'success') {
-            $(elementSelector).addClass('embedded');
-            $(elementSelector).prepend('<div><div id="embedded-heading-container"><span class="embedded-heading">' + title + '</span><button onclick="$(\'' + elementSelector + '\').html(\'\');' +
-               ' $(\'' + elementSelector + '\').removeClass(\'embedded\');" ' +
-               'class="btn-dismiss-embedded">X</button></div><br> '+linkNotice+' </div>');
-            $(elementSelector + ' > div > .btn-dismiss').button();
-
-            if ($('.prettyprint:not(.prettyprinted)').length > 0) {
-                prettyPrintCodeSamples();
-            }
-        }
+/**
+ * Loads inner panels in the Schedule page during expansion.
+ * Inner panels should be <h3> elements nested in the <div>:
+ *   <div class="divId">
+ *     <h3 class="load-during-expansion" data-url="url"></h3>
+ *   </div>
+ * where 'divId' has a form 'component-week#' e.g. 'activity-week2',
+ *       'url' links to a file with HTML meant to be inside a <div>.
+ */
+function loadInnerPanels(divId) {
+    $('.' + divId + ' > .load-during-expansion').each(function() {
+        var panel = $(this);
+        var url = panel.attr('data-url');
+        $.get(url, function(data) {
+            var div = $('<div></div>');
+            div.addClass("ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active");
+            div.html(data);
+            panel.after(div);
+        });
+        panel.removeClass('load-during-expansion');
+        panel.removeAttr('data-url');
     });
 }
 
@@ -79,6 +77,7 @@ function addCollapseAndExpandButtonsForComponents(accordionHeaderSelector, divId
     $(accordionHeaderSelector + ' > .btn-expand').on('click', function(e) {
         e.stopPropagation();
         var divId = $(this).attr('id').substr(('expand-').length);
+        loadInnerPanels(divId);
         var collapseInnerAccordionsButtons = $('.' + divId + ' h3 > .btn-collapse');
         $(collapseInnerAccordionsButtons).click();
         var collapsedAccordions = $('.' + divId + ' > h3:not(.ui-accordion-header-active)');
@@ -251,7 +250,7 @@ function loadContent(week) {
             }
 
             if (++weeksLoaded == totalWeeks) {
-                $.getScript('../scripts/tooltip.js');
+                $.getScript('../../scripts/tooltip.js');
                 expandSectionForAnchor(location.hash);
             }
         }
@@ -456,7 +455,7 @@ $(document).ready(function() {
     $('#content').css('height', 'auto');
 
     for (var week = 0; week <= 14; week++) {
-        $('#content-week' + week).html('<img height="40" width="40" class="margin-center-horizontal" src="../images/ajax-preload.gif"/>');
+        $('#content-week' + week).html('<img height="40" width="40" class="margin-center-horizontal" src="../../images/ajax-preload.gif"/>');
         loadContent(week);
     }
 

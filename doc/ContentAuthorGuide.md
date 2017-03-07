@@ -1,8 +1,10 @@
 # Content Author Guide
 * [Syntax](#syntax)
     * [Embedded Links](#embedded-links)
+    * [Component Panels](#component-panels)
     * [Tooltips](#tooltips)
     * [Useful Style Classes](#useful-style-classes)
+    * [Contextual Backgrounds](#contextual-backgrounds)
     * [Code Tags](#code-tags)
     * [Syntax Highlighting](#syntax-highlighting)
     * [Difficulty Stars](#difficulty-stars)
@@ -20,7 +22,7 @@ Embedded links are used to load supplementary sections, triggered by a click.
 Adding an embedded link:
 
 1. Enclose link text in `<span onclick="getContentUsingAjax('param-name', 'param-selector', 'param-id');" class="embedded-link">` `</span>`,  
-   e.g. `<span onclick="getContentUsingAjax('handbook-teams', '#embedded-week1-teams');" class="embedded-link">`**Teams**`</span>`
+   e.g. `<span onclick="getContentUsingAjax('handbook/teams', '#embedded-week1-teams');" class="embedded-link">`**Teams**`</span>`
     * param-name: name of the file to load from (without .html)
     * param-selector: `#selector` for element in this page to load into
     * param-id: section id for element in file to load from (optional)
@@ -33,13 +35,35 @@ Adding an embedded link:
    In most cases, this can be right after the paragraph with the embedded link.  
    e.g. `<div id="embedded-week1-teams"></div>`
 
-> **Limitations**  
-\- Embedded links are limited to **schedule.html** referencing local files (Issues #230, #232).  
+> Embedded links are enabled by including this script tag in a HTML file:
+```html
+<script type="text/javascript" src="../scripts/embedded.js"></script>
+```
+
+> **Limitation**  
 \- HTML syntax for embedded links are overly verbose (PR #174).
+
+### Component Panels
+Component panels are the lowest-level panels in the Schedule page.  
+One way to populate panels, other than including content directly,  
+is by specifying a file to load from when the panel first expands.  
+The file can be reused with different titles to match the context.
+
+Inner panels should be `h3` elements nested in the `div`:
+```html
+<div class="divId">
+  <h3 class="load-during-expansion" data-url="url">Title</h3>
+</div>
+```
+where `divId` has a form `component-week#` e.g. `activity-week2`,  
+      `url` links to a file with HTML meant to be inside a `div`.
+
+> Component panels are enabled in **schedule/index.html** and **schedule/week.html**  
+> through the `loadInnerPanels(divId)` function in **common.js**.
 
 ### Tooltips
 Tooltips are used for short supplementary information, triggered by a hover.  
-Tooltips are enabled for content in **schedule.html** through **common.js**.
+Tooltips are enabled for content in **schedule/index.html** through **common.js**.
 
 Adding a tooltip:
 
@@ -56,13 +80,9 @@ e.g. `'IDE' : ['IDEs']`
 \- Multiple definitions are not yet supported (Issue #235).
 
 ### Useful Style Classes
-These style classes are used frequently (sorted here in alphabetical order):
+These classes are used frequently to style inline content.
 
-* `additional-info` for information that is in a separate `<div>`
-> padding: 10px 10px  
-> background-color: gray
-
-* `dim` for less important additional information that is inline
+* `dim` for less important additional information
 > color: gray
 
 * `highlighted` for important bits of information
@@ -70,6 +90,22 @@ These style classes are used frequently (sorted here in alphabetical order):
 
 * `important` for extra-important bits of information (used sparingly)
 > color: maroon
+
+### Contextual Backgrounds
+Contextual backgrounds are used for admonition blocks to convey meaning through color.
+
+Adding contextual backgrounds:
+```html
+<p class="bg-additional">bg-additional</p>
+<p class="bg-important">bg-important</p>
+<p class="bg-quote">bg-quote</p>
+<p class="bg-sidebar-info">bg-sidebar-info</p>
+<p class="bg-sidebar-main">bg-sidebar-main</p>
+<p class="bg-warning">bg-warning</p>
+```
+![](contextual-backgrounds.png)
+> Classes may be used with `span`, but preferably blocks (e.g. `p` or `div`).  
+> However, sidebar elements must be used with blocks and preceded by a block.
 
 ### Code Tags
 Use `<code>` tags to represent fragments of computer code in monospace font.
@@ -79,7 +115,9 @@ Use `<code>` tags to represent fragments of computer code in monospace font.
 
 ### Syntax Highlighting
 Language-specific syntax highlighting is achieved by enclosing code samples in:  
-`<pre class="prettyprint"><code class="language-java>` `</code></pre>`  
+```html
+<pre class="prettyprint"><code class="language-java"> </code></pre>
+```
 > Other valid code classes: `lang-html`, `shell`
 
 ### Difficulty Stars
@@ -98,7 +136,7 @@ Each tutorial has a list of learning activities. Stars are used for categories.
 
 ### Coding Standards
 * [JavaScript](https://docs.google.com/document/d/1gZ6WG6HBTJYHAtVkz9kzi_SUuzfXqzO-SvFnLuag2xM/pub?embedded=true)
-* [CSS](https://docs.google.com/document/d/1wA9paRA9cS7ByStGbhRRUZLEzEzimrNQjIDPVqy1ScI/pub)
+* [CSS](../codingStandards/coding-standards-css.md)
 * [HTML](https://oss-generic.github.io/process/codingStandards/CodingStandard-Html.html)
 
 ### Committing Changes
