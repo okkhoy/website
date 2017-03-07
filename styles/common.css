@@ -46,33 +46,6 @@ a:visited {
     overflow-y: auto;
 }
 
-#overlay {
-    position: absolute;
-    top: 37%;
-    left: 39.5%;
-    width: 20%;
-    height: 20%;
-    background-color: rgba(0,0,0,0.5);
-    border-radius: 5px;
-    z-index: 10;
-}
-
-#modal {
-    width: 150px;
-    height: 25px;
-    line-height: 50px;
-    position: fixed;
-    top: 50%; 
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -75px;
-    text-align: center;
-    font-size: large;
-    font-family: sans-serif;
-    color: #ffffff;
-    z-index: 11; /* 1px higher than the overlay layer */
-}
-
 .embedded-link-loading-img {
     height: 50px;
     width: 50px;
@@ -88,10 +61,13 @@ a:visited {
   padding-left:4em;
 }
 
-code{
+:not(pre) > code {
+    background-color: #f2f2f2;
+}
+
+code {
     font-family: courier;
     font-size: small;
-    background-color: #f2f2f2;
 }
 
 .shell{
@@ -251,6 +227,12 @@ code{
     border-color: #d9534f;
 }
 
+.ui-accordion-header-active.ui-accordion-header-sticky {
+    position: fixed;
+    top: -2px;
+    z-index: 1;
+}
+
 /*
  * buttons
  */
@@ -309,6 +291,24 @@ code{
 }
 
 /*
+ * embedded button
+ */
+
+.btn-dismiss-embedded {
+    background-color: transparent;
+    border-radius: 3px;
+    border: 1px solid;
+    color: white;
+    float: right;
+    margin-top: -2px;
+    padding: 1px 12px 1px 12px;
+}
+
+.btn-dismiss-embedded:hover {
+    background-color: red;
+}
+
+/*
  * tables
  */
 
@@ -358,6 +358,10 @@ table.two-column-content td {
  * paragraph texts
  */
 
+ tooltip {
+     border-bottom: 1px dashed black;
+ }
+ 
  .deadline > div > ul > li {
     font-weight: bold;
  }
@@ -402,20 +406,23 @@ table.two-column-content td {
 }
 
 .embedded {
-    padding: 10px 10px;
-    border: 1px dashed #000;
-    margin: 10px auto;
     background-color: #efefef;
+    border: 1px solid #7A629B;
+    border-radius: 3px;
+    margin: 10px auto;
+    padding: 0 10px 10px 10px;
 }
 
-.embeddedHeading{
+.embedded-heading {
     color: white;
-    background-color: gray;
-    padding-top:10px;
-    padding-bottom:10px;
-    padding-left:20px;
-    padding-right:30px;
-    font-weight: bold;
+}
+
+#embedded-heading-container {
+    background-color: #7A629B;
+    border-radius: 3px;
+    left: -10px;
+    padding: 7px 10px 7px 10px;
+    position: relative;
     width: 100%;
 }
 

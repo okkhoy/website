@@ -1,7 +1,7 @@
 // Change this to set the module start date
 // Format: 'Year.Month.Date'
 // E.g. '2015.8.10'
-var MODULE_START_DATE = setModuleStartDate('2016.8.8');
+var MODULE_START_DATE = setModuleStartDate('2017.1.9');
 var MONTH_NAMES_SHORT_FORM = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 function setModuleStartDate(inputDate) {
@@ -21,7 +21,7 @@ function makeAccordion(elementSelector) {
 }
 
 function getContentUsingAjax(fileName, elementSelector, sectionName) {
-    pullContent(fileName, elementSelector, 'Exract from handbook', sectionName);
+    pullContent(fileName, elementSelector, 'Extract from handbook', sectionName);
 }
 
 function pullContent(fileName, elementSelector, title, sectionName) {
@@ -34,12 +34,29 @@ function pullContent(fileName, elementSelector, title, sectionName) {
     $(elementSelector).load(toBeLoaded, function(response, status, xhr) {
         if (status == 'success') {
             $(elementSelector).addClass('embedded');
-            $(elementSelector).prepend('<div><span class="embeddedHeading">' + title + '</span><button onclick="$(\'' + elementSelector + '\').html(\'\');' +
+            $(elementSelector).prepend('<div><div id="embedded-heading-container"><span class="embedded-heading">' + title + '</span><button onclick="$(\'' + elementSelector + '\').html(\'\');' +
                ' $(\'' + elementSelector + '\').removeClass(\'embedded\');" ' +
-               'class="btn-dismiss">X</button><br><br> '+linkNotice+' </div>');
+               'class="btn-dismiss-embedded">X</button></div><br> '+linkNotice+' </div>');
             $(elementSelector + ' > div > .btn-dismiss').button();
+
+            if ($('.prettyprint:not(.prettyprinted)').length > 0) {
+                prettyPrintCodeSamples();
+            }
         }
-    }); 
+    });
+}
+
+/**
+ * Pretty-prints code samples.
+ * If PR is undefined, get run_prettify.js with 'sunburst' skin,
+ * else, call prettyPrint() that is defined in the above script.
+ */
+function prettyPrintCodeSamples() {
+    if (typeof PR == "undefined") {
+        $.getScript("https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst");
+    } else {
+        PR.prettyPrint();
+    }
 }
 
 function addCollapseAndExpandButtonsForComponents(accordionHeaderSelector, divId) {
@@ -188,6 +205,8 @@ function checkIfAllComponentsChecked() {
     return isAllChecked;
 }
 
+var totalWeeks = 15;
+var weeksLoaded = 0;
 function loadContent(week) {
     $.ajax({
         type: 'GET',
@@ -215,8 +234,45 @@ function loadContent(week) {
                     $('.' + type + '.content-week' + week).hide();
                 }
             });
+
+            if (typeof preview != 'undefined') {
+                expandWeekFully(week);
+                totalWeeks = 1;
+            } else if (isCurrentWeek(week)) {
+                expandWeekFully(week);
+
+                // Students may miss Week 0 content if only Week 1 is expanded in the first week.
+                // This expands Week 0 after waiting for scroll animation to complete for Week 1.
+                if (week == 1) {
+                    setTimeout(function() {
+                        expandWeekFully(0);
+                    }, 500);
+                }
+            }
+
+            if (++weeksLoaded == totalWeeks) {
+                $.getScript('../scripts/tooltip.js');
+                expandSectionForAnchor(location.hash);
+            }
         }
     });
+}
+
+/**
+ * Expands the section as referenced by an anchored link.
+ * Reveal the section if nested, then expand the section.
+ * If anchor is empty string, this function does nothing.
+ */
+function expandSectionForAnchor(anchor) {
+    var headers = $(anchor).parents('.ui-accordion-content').prev('.ui-accordion-header');
+    headers.click();
+    $(anchor).click();
+
+    setTimeout(function() {
+        var headerHeight = headers.last().outerHeight();
+        var position = $(anchor).offset().top - headerHeight;
+        $(window).scrollTop(position);
+    }, 500); // Wait for scroll animation in "addAutoScrollToClickedWeekHeader"
 }
 
 function addAutoExpandSubheadingsBehaviour(component) {
@@ -228,6 +284,95 @@ function addAutoExpandSubheadingsBehaviour(component) {
         var buttonId = '#expand-' + componentName +'-' + week;
         if ($('#' + id).hasClass('ui-accordion-header-active')) {
             $(buttonId).click();
+        }
+    });
+}
+
+/**
+ * Adds the 'top' and 'bottom' functions to any jQuery object.
+ * These return the offset positions relative to the document.
+ */
+function addTopAndBottomFunctions(object) {
+    object.top = function() {
+        return object.offset().top;
+    }
+    object.bottom = function() {
+        return object.offset().top + object.outerHeight();
+    }
+}
+
+/**
+ * Adds the 'makePlaceholder' function to week headings (jQuery object).
+ * The placeholder is a 'div' with the original id appended with '-placeholder'.
+ * The placeholder is created, as the name implies, but not automatically added.
+ * The reference to the placeholder is stored as attribute in the jQuery object.
+ */
+function addMakePlaceholderFunction(accordionHeader) {
+    accordionHeader.makePlaceholder = function() {
+        var placeholder = $('<div></div>');
+        placeholder.attr('id', accordionHeader.attr('id') + '-placeholder');
+        placeholder.css({ height: String(accordionHeader.height()) });
+        placeholder.addClass('ui-accordion-header');
+        accordionHeader.placeholder = placeholder;
+    }
+}
+
+/**
+ * Adds the 'freeze' and 'unfreeze' functions to week headings (jQuery object).
+ * A week heading that is 'frozen' has its position fixed at the top of a page.
+ * A placeholder is used to avoid jerky transition, since fixing a html element
+ *  will cause 'position: relative' elements to shift up to fill vacated space.
+ */
+function addFreezeAndUnfreezeFunctions(accordionHeader) {
+    addMakePlaceholderFunction(accordionHeader);
+
+    accordionHeader.freeze = function() {
+        accordionHeader.makePlaceholder();
+        accordionHeader.parent().prepend(accordionHeader.placeholder);
+        accordionHeader.css({ width: String(accordionHeader.width()) });
+        accordionHeader.addClass('ui-accordion-header-sticky');
+    }
+    accordionHeader.unfreeze = function() {
+        accordionHeader.placeholder.remove();
+        accordionHeader.css({ width: '' });
+        accordionHeader.removeClass('ui-accordion-header-sticky');
+    }
+}
+
+/**
+ * Adds the 'sticky' behaviour to week headings.
+ * Freezes the *expanded* accordion header when:
+ * - scrolled past the header.
+ * Unfreezes the *frozen* accordion header when:
+ * - scrolled above the week, or
+ * - scrolled past the week.
+ * Disambiguation of terms:
+ * - 'sticky' describes the above dynamic behaviour.
+ * - 'frozen' describes the current state, whether position is fixed at the top.
+ */
+function addStickyBehaviourToWeekHeadings(accordionHeaderSelector) {
+    var header = $(accordionHeaderSelector);
+    var accordion = header.parent();
+
+    addTopAndBottomFunctions(accordion);
+    addTopAndBottomFunctions(header);
+    addFreezeAndUnfreezeFunctions(header);
+
+    $(window).scroll(function(){
+        var isFrozen = header.hasClass('ui-accordion-header-sticky');
+        var isExpanded = header.hasClass('ui-accordion-header-active');
+        if (isFrozen) {
+            var isScrolledAboveWeek = header.top() < accordion.top();
+            var isScrolledPastWeek = header.bottom() > accordion.bottom();
+            if (!isExpanded || isScrolledAboveWeek || isScrolledPastWeek) {
+                header.unfreeze();
+            }
+        } else { // !isFrozen
+            var isScrolledPastHeader = header.top() < $(this).scrollTop();
+            var isFreezingExceedsWeek = $(this).scrollTop() + header.outerHeight() > accordion.bottom();
+            if (isExpanded && isScrolledPastHeader && !isFreezingExceedsWeek) {
+                header.freeze();
+            }
         }
     });
 }
@@ -259,6 +404,23 @@ function getDate(week, day) {
     return date;
 }
 
+/**
+ * Determines if a given week is the current week.
+ * Uses the ISO 8601 week, which starts on Monday.
+ */
+function isCurrentWeek(week) {
+    var weekOfYear = $.datepicker.iso8601Week(getDate(week, 1));
+    var currentWeekOfYear = $.datepicker.iso8601Week(new Date());
+    return weekOfYear == currentWeekOfYear;
+}
+
+/**
+ * Expands a week fully, by clicking its expand all button.
+ */
+function expandWeekFully(week) {
+    $("#expandall-content-week" + week).click();
+}
+
 function addAutoScrollToClickedWeekHeader() {
     var isAnimating = false;
     $('.buttoned').click(function(event) {
@@ -283,6 +445,7 @@ $(document).ready(function() {
         var id = $(this).attr('id');
         var week = id.substr(('header-content-week').length);
         addCollapseAndExpandButtonsForWeek('#' + id, 'content-week' + week);
+        addStickyBehaviourToWeekHeadings('#' + id);
     });
     var headerHeight = 40;
     var topMargin = 5;
