@@ -6,6 +6,7 @@
 
 * The size column shows relative sizes of project code base, estimated based on coverall reports 
   as at `2017.03.09 1:35pm`. 
+
   * Green: code covered by tests
   * Red: code not covered by tests
   * Purple: test code (estimated as 1.2 times the covered code)
