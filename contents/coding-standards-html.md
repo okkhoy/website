@@ -59,7 +59,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>CS2103/T (Module website)</title>
+    <title>CS2103 (Module website)</title>
     
     <!-- Sample stylesheet inclusion -->
     <link type="text/css" href="styles/common.css" rel="stylesheet">

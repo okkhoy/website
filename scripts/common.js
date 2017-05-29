@@ -1,7 +1,7 @@
 // Change this to set the module start date
 // Format: 'Year.Month.Date'
 // E.g. '2015.8.10'
-var MODULE_START_DATE = setModuleStartDate('2016.8.8');
+var MODULE_START_DATE = setModuleStartDate('2017.6.19');
 var MONTH_NAMES_SHORT_FORM = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 function setModuleStartDate(inputDate) {
@@ -38,8 +38,25 @@ function pullContent(fileName, elementSelector, title, sectionName) {
                ' $(\'' + elementSelector + '\').removeClass(\'embedded\');" ' +
                'class="btn-dismiss-embedded">X</button></div><br> '+linkNotice+' </div>');
             $(elementSelector + ' > div > .btn-dismiss').button();
+
+            if ($('.prettyprint:not(.prettyprinted)').length > 0) {
+                prettyPrintCodeSamples();
+            }
         }
-    }); 
+    });
+}
+
+/**
+ * Pretty-prints code samples.
+ * If PR is undefined, get run_prettify.js with 'sunburst' skin,
+ * else, call prettyPrint() that is defined in the above script.
+ */
+function prettyPrintCodeSamples() {
+    if (typeof PR == "undefined") {
+        $.getScript("https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst");
+    } else {
+        PR.prettyPrint();
+    }
 }
 
 function addCollapseAndExpandButtonsForComponents(accordionHeaderSelector, divId) {
@@ -188,6 +205,8 @@ function checkIfAllComponentsChecked() {
     return isAllChecked;
 }
 
+var totalWeeks = 15;
+var weeksLoaded = 0;
 function loadContent(week) {
     $.ajax({
         type: 'GET',
@@ -218,11 +237,49 @@ function loadContent(week) {
 
             if (typeof preview != 'undefined') {
                 expandWeekFully(week);
+                totalWeeks = 1;
             } else if (isCurrentWeek(week)) {
                 expandWeekFully(week);
+
+                // Students may miss Week 0 content if only Week 1 is expanded in the first week.
+                // This expands Week 0 after waiting for scroll animation to complete for Week 1.
+                if (week == 1) {
+                    setTimeout(function() {
+                        expandWeekFully(0);
+                    }, 500);
+                }
+
+                // If recess week (week == 7), then expand the next week (week == 8)
+                if (week == 7) {
+                    setTimeout(function() {
+                        expandWeekFully(8);
+                    }, 500);
+                }
+            }
+
+            if (++weeksLoaded == totalWeeks) {
+                $.getScript('../scripts/tooltip.js');
+                expandSectionForAnchor(location.hash);
             }
         }
     });
+}
+
+/**
+ * Expands the section as referenced by an anchored link.
+ * Reveal the section if nested, then expand the section.
+ * If anchor is empty string, this function does nothing.
+ */
+function expandSectionForAnchor(anchor) {
+    var headers = $(anchor).parents('.ui-accordion-content').prev('.ui-accordion-header');
+    headers.click();
+    $(anchor).click();
+
+    setTimeout(function() {
+        var headerHeight = headers.last().outerHeight();
+        var position = $(anchor).offset().top - headerHeight;
+        $(window).scrollTop(position);
+    }, 500); // Wait for scroll animation in "addAutoScrollToClickedWeekHeader"
 }
 
 function addAutoExpandSubheadingsBehaviour(component) {
@@ -347,8 +404,9 @@ function generateDates() {
 function getDate(week, day) {
     var date = new Date();
     var MILLI_SECS_PER_DAY = 24 * 60 * 60 * 1000;
-    var isAfterRecessWeek = week > 6;
-    var weeksPassed = week - 1 + isAfterRecessWeek;
+//    var isAfterRecessWeek = week > 6;
+//    var weeksPassed = week - 1 + isAfterRecessWeek;
+    var weeksPassed = week - 1; // + isAfterRecessWeek;
     var daysPassed = weeksPassed * 7 + day - 1;
     date.setTime(MODULE_START_DATE.getTime() + daysPassed * MILLI_SECS_PER_DAY);
     return date;

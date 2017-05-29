@@ -1,10 +1,18 @@
 /**
  * Jumps to a section's heading.
  * The header is before the div.
+ * Account for Safari scrolling.
  */
 function jumpToSectionHeading(section) {
+    var isSafariBrowser = !navigator.userAgent.includes('Chrome') && navigator.userAgent.includes('Safari');
+    var windowToScroll = window;
+    var headingsFrameOffset = 0;
+    if(isSafariBrowser && (windowToScroll != window.top)) {
+        windowToScroll = window.top;
+        headingsFrameOffset = 60; // From index.html
+    }
     var headerPosition = $('#' + section).prev().offset().top;
-    $(window).scrollTop(headerPosition);
+    $(windowToScroll).scrollTop(headerPosition + headingsFrameOffset);
 }
 
 /**
@@ -96,6 +104,9 @@ function loadSectionUsingAjax(section, callback) {
                     }
                 });
             }
+            if ($('.prettyprint:not(.prettyprinted)').length > 0) {
+                PR.prettyPrint();
+            }
         }
     });
 }
@@ -127,10 +138,11 @@ function isTableOfContentVisible() {
 }
 
 /**
- * Loads sections based on whether preview has been requested.
- * If not preview, hold $(document).ready until ajax callback.
+ * Loads sections, based on whether a preview was requested.
+ * If preview, the remaining anchors trigger load-on-demand,
+ * else, the remaining anchors jump to section heading only.
  */
-function loadSectionsBeforeDocumentReady() {
+function loadSections() {
     var preview = window.location.href.match(/\?preview=([^&#]*)/);
 
     if (preview) {
@@ -143,9 +155,7 @@ function loadSectionsBeforeDocumentReady() {
         $('a[href="#' + section + '"]').click();
         $('#overlay').remove();
     } else {
-        $.holdReady(true);
         var callback = function() {
-            $.holdReady(false);
             $('#overlay').remove();
         }
         loadAllSectionsUsingAjax(callback);
@@ -153,9 +163,9 @@ function loadSectionsBeforeDocumentReady() {
     }
 }
 
-loadSectionsBeforeDocumentReady();
-
 $(document).ready(function() {
+    loadSections();
+
     var buttonAnimationDuration = 200;
     var speed = 1;
 
