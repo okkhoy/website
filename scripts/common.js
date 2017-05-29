@@ -1,7 +1,7 @@
 // Change this to set the module start date
 // Format: 'Year.Month.Date'
 // E.g. '2015.8.10'
-var MODULE_START_DATE = setModuleStartDate('2017.1.9');
+var MODULE_START_DATE = setModuleStartDate('2017.6.19');
 var MONTH_NAMES_SHORT_FORM = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 function setModuleStartDate(inputDate) {
@@ -20,27 +20,29 @@ function makeAccordion(elementSelector) {
     });
 }
 
-/**
- * Loads inner panels in the Schedule page during expansion.
- * Inner panels should be <h3> elements nested in the <div>:
- *   <div class="divId">
- *     <h3 class="load-during-expansion" data-url="url"></h3>
- *   </div>
- * where 'divId' has a form 'component-week#' e.g. 'activity-week2',
- *       'url' links to a file with HTML meant to be inside a <div>.
- */
-function loadInnerPanels(divId) {
-    $('.' + divId + ' > .load-during-expansion').each(function() {
-        var panel = $(this);
-        var url = panel.attr('data-url');
-        $.get(url, function(data) {
-            var div = $('<div></div>');
-            div.addClass("ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active");
-            div.html(data);
-            panel.after(div);
-        });
-        panel.removeClass('load-during-expansion');
-        panel.removeAttr('data-url');
+function getContentUsingAjax(fileName, elementSelector, sectionName) {
+    pullContent(fileName, elementSelector, 'Extract from handbook', sectionName);
+}
+
+function pullContent(fileName, elementSelector, title, sectionName) {
+    var toBeLoaded = fileName + '.html' + (sectionName == undefined ? '' : ' #' + sectionName);
+    var directLink = 'handbook.html#'+fileName;
+    var linkNotice = '<span class="important">{Some links in this embedded content box might not work. ' +
+        'If you need to follow the links, please go to the <a href="' + directLink + '" target="_blank">relevant section</a> ' +
+        'of the handbook instead}</span>';
+    $(elementSelector).html('<img class="embedded-link-loading-img" src="../images/ajax-preload.gif" alt="Loading...">');
+    $(elementSelector).load(toBeLoaded, function(response, status, xhr) {
+        if (status == 'success') {
+            $(elementSelector).addClass('embedded');
+            $(elementSelector).prepend('<div><div id="embedded-heading-container"><span class="embedded-heading">' + title + '</span><button onclick="$(\'' + elementSelector + '\').html(\'\');' +
+               ' $(\'' + elementSelector + '\').removeClass(\'embedded\');" ' +
+               'class="btn-dismiss-embedded">X</button></div><br> '+linkNotice+' </div>');
+            $(elementSelector + ' > div > .btn-dismiss').button();
+
+            if ($('.prettyprint:not(.prettyprinted)').length > 0) {
+                prettyPrintCodeSamples();
+            }
+        }
     });
 }
 
@@ -77,7 +79,6 @@ function addCollapseAndExpandButtonsForComponents(accordionHeaderSelector, divId
     $(accordionHeaderSelector + ' > .btn-expand').on('click', function(e) {
         e.stopPropagation();
         var divId = $(this).attr('id').substr(('expand-').length);
-        loadInnerPanels(divId);
         var collapseInnerAccordionsButtons = $('.' + divId + ' h3 > .btn-collapse');
         $(collapseInnerAccordionsButtons).click();
         var collapsedAccordions = $('.' + divId + ' > h3:not(.ui-accordion-header-active)');
@@ -247,10 +248,17 @@ function loadContent(week) {
                         expandWeekFully(0);
                     }, 500);
                 }
+
+                // If recess week (week == 7), then expand the next week (week == 8)
+                if (week == 7) {
+                    setTimeout(function() {
+                        expandWeekFully(8);
+                    }, 500);
+                }
             }
 
             if (++weeksLoaded == totalWeeks) {
-                $.getScript('../../scripts/tooltip.js');
+                $.getScript('../scripts/tooltip.js');
                 expandSectionForAnchor(location.hash);
             }
         }
@@ -396,8 +404,9 @@ function generateDates() {
 function getDate(week, day) {
     var date = new Date();
     var MILLI_SECS_PER_DAY = 24 * 60 * 60 * 1000;
-    var isAfterRecessWeek = week > 6;
-    var weeksPassed = week - 1 + isAfterRecessWeek;
+//    var isAfterRecessWeek = week > 6;
+//    var weeksPassed = week - 1 + isAfterRecessWeek;
+    var weeksPassed = week - 1; // + isAfterRecessWeek;
     var daysPassed = weeksPassed * 7 + day - 1;
     date.setTime(MODULE_START_DATE.getTime() + daysPassed * MILLI_SECS_PER_DAY);
     return date;
@@ -455,7 +464,7 @@ $(document).ready(function() {
     $('#content').css('height', 'auto');
 
     for (var week = 0; week <= 14; week++) {
-        $('#content-week' + week).html('<img height="40" width="40" class="margin-center-horizontal" src="../../images/ajax-preload.gif"/>');
+        $('#content-week' + week).html('<img height="40" width="40" class="margin-center-horizontal" src="../images/ajax-preload.gif"/>');
         loadContent(week);
     }
 

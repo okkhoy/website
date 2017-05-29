@@ -1,3 +1,46 @@
+<div class="deadline content-week6">
+  <h3 id="deadline1-content-week6" class="buttoned"><span>Deadlines </span></h3>
+  <div>
+    <div class="deadline deadline1-week6">
+      <h3>[Sun (<span class="date-marker" week="6" day="7"></span>) 23:59] Complete phase A peer evaluation and TEAMMATES profile</h3>
+      <div>
+        You will be receiving the submission email from the TEAMMATES system soon. Follow the link in the email
+        to submit the peer evaluation for students you interacted with during tutorials so far.<br>
+        Note the
+        <span onclick="getContentUsingAjax('handbook-peerEvaluations', '#embedded-week6-teammates', 'extra-requirements');" class="embedded-link">
+          Extra Requirements
+        </span>
+        for using TEAMMATES.
+        <div id="embedded-week6-teammates"></div>
+
+      </div>
+    </div>
+
+    <div class="deadline deadline1-week6">
+      <h3>[Mon (<span class="date-marker" week="6" day="1"></span>) - Sun (<span class="date-marker" week="6" day="7"></span>) 23:59] Feedback for tutors</h3>
+      <div>
+      Now it is time to give your honest feedback on the module via the IVLE mid-semester survey.  Apart from seeking improvements in the module content and delivery, your feedback will also help our tutors prepare themselves better for the rest of the semester.
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<!--
+<div class="things-to-do content-week6">
+
+  <h3 id="things-to-do-content-week6" class="buttoned"><span>Weekly Checklist</span></h3>
+  <div>
+    <div class="things-to-do things-to-do-week6">
+      <h3>[Mon (<span class="date-marker" week="14" day="1"></span>) - Sun (<span class="date-marker" week="14" day="7"></span>)] Feedback for tutors</h3>
+      <div>
+      Now it is time to give your honest feedback on the module via the IVLE mid-semester survey.  Apart from seeking improvements in the module content and delivery, your feedback will also help our tutors prepare themselves better for the rest of the semester.
+      </div>
+    </div>
+  </div>
+</div>
+-->
 
 
 <div class="things-to-do content-week6">
@@ -7,11 +50,24 @@
       <h3>Note the following refinement to the PR workflow</h3>
       <div>
         You are no longer required to add a <code>Ready for review</code> comment to every PR
-        (If there is no comment, we assume the PR is ready for review).<br>
+        (if there is no comment, we assume the PR is ready for review).<br>
         Instead, if the PR is not ready for review yet, add a comment <code>Work in progress</code>.
         When the PR is ready, add a comment <code>Ready for review</code>.
       </div>
     </div>
+
+    <div class="things-to-do things-to-do-week6">
+      <h3>Submitting clean pull requests</h3>
+      <div>
+        You are reminded to keep PRs independent of each other.
+        Always switch to the master branch before creating a new branch to avoid commits from one PR being included in other PRs.
+        Before submitting a PR, ensure that the code is clean,
+        i.e. compliance with coding style and no commented out code.
+        Moreover, ensure that tests and documentation have been updated where necessary.
+      </div>
+    </div>
+
+
     <div class="things-to-do things-to-do-week6">
       <h3>Configure Eclipse indentation style</h3>
       <div>
@@ -25,36 +81,36 @@
   <h3 id="activity-content-week6" class="buttoned"><span>Pre-Tutorial Learning Activities</span></h3>
   <div>
     <div class="activity activity-week6">
-      <h3>T5A1. Requirements <img src="../../images/star.png"/></h3>
+      <h3>T5A1. Requirements <img src="../images/star.png"/></h3>
       <div>
         <p>Complete the exercises for the learning outcomes: <br>
 
-          <a href="https://github.com/nus-cs2103-AY1617S2/addressbook-level3/blob/master/doc/LearningOutcomes.md#utilize-user-stories-lo-userstories" target="_blank">
+          <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level3/blob/master/doc/LearningOutcomes.md#utilize-user-stories-lo-userstories" target="_blank">
             AddressBook-Level3: Utilize User Stories [LO-UserStories]</a><br>
-          <a href="https://github.com/nus-cs2103-AY1617S2/addressbook-level3/blob/master/doc/LearningOutcomes.md#utilize-use-cases-lo-usecases" target="_blank">
+          <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level3/blob/master/doc/LearningOutcomes.md#utilize-use-cases-lo-usecases" target="_blank">
             AddressBook-Level3: Utilize Use Cases [LO-UseCases]</a><br>
-          <a href="https://github.com/nus-cs2103-AY1617S2/addressbook-level3/blob/master/doc/LearningOutcomes.md#use-non-functional-requirements-lo-nfr" target="_blank">
+          <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level3/blob/master/doc/LearningOutcomes.md#use-non-functional-requirements-lo-nfr" target="_blank">
             AddressBook-Level3: Use Non Functional Requirements [LO-NFR]</a><br>
         </p>
         <p>
           Submission:
             Create a PR with your code
-            [<span onclick="getContentUsingAjax('../handbook/appendixE-github', '#embedded-week6-pr-steps', 'tutorial-pr-instructions');">
+            [<span onclick="getContentUsingAjax('handbook-appendixE-github', '#embedded-week6-pr-steps', 'tutorial-pr-instructions');">
                         <span class="embedded-link">Instructions</span></span>]
             <div id="embedded-week6-pr-steps"></div>
         </p>
       </div>
     </div>
     <div class="activity activity-week6">
-      <h3>T5A2. Polymorphism <img src="../../images/2stars.png"/></h3>
+      <h3>T5A2. Polymorphism <img src="../images/2stars.png"/></h3>
       <div>
         <p>Complete the exercises for the learning outcomes: <br>
 
-          <a href="https://github.com/nus-cs2103-AY1617S2/addressbook-level3/blob/master/doc/LearningOutcomes.md#use-polymorphism-lo-polymorphism" target="_blank">
+          <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level3/blob/master/doc/LearningOutcomes.md#use-polymorphism-lo-polymorphism" target="_blank">
             AddressBook-Level3: Use Polymorphism [LO-Polymorphism]</a><br>
-          <a href="https://github.com/nus-cs2103-AY1617S2/addressbook-level3/blob/master/doc/LearningOutcomes.md#use-abstract-classesmethods-lo-abstract" target="_blank">
+          <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level3/blob/master/doc/LearningOutcomes.md#use-abstract-classesmethods-lo-abstract" target="_blank">
             AddressBook-Level3: Use abstract classes/methods [LO-Abstract]</a><br>
-          <a href="https://github.com/nus-cs2103-AY1617S2/addressbook-level3/blob/master/doc/LearningOutcomes.md#follow-liskov-substitution-principle-lo-lsp" target="_blank">
+          <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level3/blob/master/doc/LearningOutcomes.md#follow-liskov-substitution-principle-lo-lsp" target="_blank">
             AddressBook-Level3: Follow Liskov Substitution Principle [LO-LSP]</a><br>
         </p>
         <p>
@@ -63,10 +119,10 @@
       </div>
     </div>
     <div class="activity activity-week6">
-      <h3>T5A3. JavaFx<img src="../../images/2stars.png"/></h3>
+      <h3>T5A3. JavaFx<img src="../images/2stars.png"/></h3>
       <div>
         <p>Complete the exercises for the learning outcomes: <br>
-          <a href="https://github.com/nus-cs2103-AY1617S2/addressbook-level3/blob/master/doc/LearningOutcomes.md#use-java-fx-for-gui-programming-lo-javafx" target="_blank">
+          <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level3/blob/master/doc/LearningOutcomes.md#use-java-fx-for-gui-programming-lo-javafx" target="_blank">
             AddressBook-Level3: Use Java-FX for GUI programming [LO-JavaFx]</a>
         </p>
         <p>
@@ -76,13 +132,13 @@
       </div>
     </div>
     <div class="activity activity-week6">
-      <h3>T5A4. Centralized workflow<img src="../../images/2stars.png"/></h3>
+      <h3>T5A4. Centralized workflow<img src="../images/2stars.png"/></h3>
       <div>
         <span class="highlighted">This is a team exercise</span>
         <p>Do the exercises for the learning outcomes: <br>
-          <a href="https://github.com/nus-cs2103-AY1617S2/rcs#follow-the-centralized-workflow-lo-centralizedworkflow" target="_blank">
+          <a href="https://github.com/nus-cs2103-AY1617S4/rcs#follow-the-centralized-workflow-lo-centralizedworkflow" target="_blank">
             RCS: Follow the centralized workflow [LO-CentralizedWorkflow] </a><br>
-          <a href="https://github.com/nus-cs2103-AY1617S2/rcs#resolve-merge-conflicts-lo-mergeconflicts" target="_blank">
+          <a href="https://github.com/nus-cs2103-AY1617S4/rcs#resolve-merge-conflicts-lo-mergeconflicts" target="_blank">
             RCS: Resolve merge conflicts [LO-MergeConflicts] </a><br>
         </p>
         <p>
@@ -90,18 +146,19 @@
         </p>
       </div>
     </div>
+<!--    
     <div class="activity activity-week6">
-      <h3>T5A5. User stories <img src="../../images/2stars.png"/></h3>
+      <h3>T5A5. User stories <img src="../images/2stars.png"/></h3>
       <div>
         <span class="highlighted">This is a team exercise</span>
         <div>
-          Read the <span onclick="getContentUsingAjax('../handbook/project-product', '#embedded-activity6');"><span
+          Read the <span onclick="getContentUsingAjax('handbook-project-product', '#embedded-activity6');"><span
             class="embedded-link">Product</span></span> product and the <span
-            onclick="getContentUsingAjax('../handbook/project-scope', '#embedded-activity6');"><span class="embedded-link">Project Scope</span></span>
+            onclick="getContentUsingAjax('handbook-project-scope', '#embedded-activity6');"><span class="embedded-link">Project Scope</span></span>
           sections of the handbook if you haven't already done so. <br>
           <div id="embedded-activity6"></div>
           Get together with team members and do step 1 (i.e Brainstorm user stories) and step 2 (Prioritize the user stories)
-          given under <span onclick="getContentUsingAjax('../handbook/project-v00', '#embedded-activity6a');"><span
+          given under <span onclick="getContentUsingAjax('handbook-project-v00', '#embedded-activity6a');"><span
               class="embedded-link">V0.0 of the Project Manual</span></span> in the handbook. <br>
           <div id="embedded-activity6a"></div>
         <p>
@@ -110,6 +167,7 @@
       </div>
     </div>
   </div>
+-->    
   </div>
 </div>
 
@@ -120,6 +178,24 @@
       <h3>Discuss pre-tutorial learning activities</h3>
       <div>
         As usual, discuss with tutor/peers pre-tutorial learning activities.<br>
+      </div>
+    </div>
+<!--  </div> -->
+    <div class="tutorial tutorial-week6">
+      <h3>[last 15 minutes] Form phase B teams</h3>
+      <div>
+        Follow tutor's directions to form Phase B teams. Before leaving the tutorial,
+        <span class="highlighted">go to IVLE and sign up for the correct phase B teams</span>.<br>
+<!--
+        <div class="additional-info">
+          ATTENTION: Now that you are with your project team, <span class="highlighted">We HIGHLY recommend</span>
+          that you do team activities in the next two tutorials <code>T5A4 (Centralized Workflow)</code> and
+          <code>T6A1 (Work in a 2KLoC code base, as a team)</code> : Doing so will help you to prepare for the
+          project as well as to get a rough measure of the technical competence of your team members.
+          Knowing the competence level of your team members minimize the risk of allocating weak members more
+          responsibilities than they can handle, which can down the whole project.
+        </div>
+-->
       </div>
     </div>
   </div>
@@ -169,19 +245,27 @@
     </div>
 
     <div class="lecture lecture-week6">
+      <h3>L5 Recap</h3>
+      <div>
+        [<a href="../files/slides/L5Recap.pptx" target="_blank">Slides</a>]
+        <!-- [Slides] -->
+      </div>
+    </div>
+
+    <div class="lecture lecture-week6">
       <h3>Part 1 - To Tighten or Loosen: What Makes a Good Design [35 minutes]</h3>
       <div>
         <table class="padded-borderless lecture-content-table">
           <tr>
             <td>
-              <img src="../../images/coupling.png">
+              <img src="../images/coupling.png">
             </td>
             <td>
               <p>
                 <!-- [Handout] -->
-                [<a href="../../files/handouts/%5bL6P1%5d%20To%20Tighten%20or%20Loosen%20-%20What%20Makes%20a%20Good%20Design.pdf" target="_blank">Handout</a>]
+                <!-- [<a href="../files/handouts/%5bL6P1%5d%20To%20Tighten%20or%20Loosen%20-%20What%20Makes%20a%20Good%20Design.pdf" target="_blank">Handout</a>] -->
                 <!-- [Slides] -->
-                [<a href="../../files/slides/L6P1.%20To%20Tighten%20or%20Loosen%20-%20What%20Makes%20a%20Good%20Component.pptx" target="_blank">Slides</a>]
+                [<a href="../files/slides/L6P1.%20To%20Tighten%20or%20Loosen%20-%20What%20Makes%20a%20Good%20Component.pptx" target="_blank">Slides</a>]
               </p>
               <span class="dim">
               <p>
@@ -203,15 +287,15 @@
         <table class="padded-borderless lecture-content-table">
           <tr>
             <td>
-              <img src="../../images/10 observations.png" style="width: 200px0">
+              <img src="../images/10 observations.png" style="width: 200px0">
             </td>
             <td>
               <p>
                 <!-- [Handout] -->
-                [<a href="../../files/handouts/%5bL6P2%5d%20From%20the%20Magician%92s%20Hat%20-%20Designing%20the%20Product.pdf" target="_blank">Handout</a>]
+                <!-- [<a href="../files/handouts/%5bL6P2%5d%20From%20the%20Magician%92s%20Hat%20-%20Designing%20the%20Product.pdf" target="_blank">Handout</a>] -->
                 <!-- [Slides] -->
                 [<a target="_blank"
-                    href="../../files/slides/L6P2.%20From%20the%20magician%92s%20hat%20-%20designing%20the%20product.pptx">Slides</a>]
+                    href="../files/slides/L6P2.%20From%20the%20magicians%20hat%20-%20designing%20the%20product.pptx">Slides</a>]
               </p>
               <span class="dim">
         <p>
@@ -254,13 +338,6 @@
               People don’t want drills, they want holes</a>
           </li>
         </ul>
-      </div>
-    </div>
-    <div class="lecture lecture-week6">
-      <h3>[15 minutes] Recap</h3>
-      <div>
-        [<a href="../../files/slides/L6Recap.pptx" target="_blank">Slides</a>]
-        <!-- [Slides] -->
       </div>
     </div>
     
