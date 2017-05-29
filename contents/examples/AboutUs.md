@@ -1,5 +1,5 @@
-#### [John Doe](http://www.comp.nus.edu.sg/~damithch) [@damithc](https://github.com/damithc)
-<img src="https://github.com/se-edu/addressbook-level4/blob/master/docs/images/DamithRajapakse.jpg" width="150"><br>
+#### [Dennis Doe](http://www.comp.nus.edu.sg/~damithch) [@damithc](https://github.com/damithc)
+<img src="http://www.comp.nus.edu.sg/~cs2103/AY1617S4/images/dennis-ritchie.png" width="150"><br>
 
 * Components in charge of: [Storage](https://github.com/se-edu/addressbook-level4/blob/master/docs/DeveloperGuide.md#storage-component)
 * Aspects/tools in charge of: Testing, Git
