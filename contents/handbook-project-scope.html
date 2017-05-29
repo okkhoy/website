@@ -1,0 +1,100 @@
+<p>
+  The scope of the project will be restricted. This is to reduce your workload and discourage an ‘arms race’
+  where you try to implement as many features as possible with no time to spend on learning good software engineering
+  principles and practices.
+</p>
+<p>
+  Write the software to cater to Jim. He is an office worker who has an office computer (used when at the office) and his
+  personal laptop (used when at home or travelling). His computers are not shared by other colleagues or family members.
+  He is not expected to use this software for collaborative work scheduling with others.
+</p>
+<p>
+  <span class="highlighted">Further narrowing/widening the scope of the project is discouraged. </span>
+</p>
+<p>
+  <strong>Must-have features:</strong>
+<ol>
+  <li>
+    Support for events (i.e., has a start time and end time), deadlines (tasks that have to be done
+    before a specific deadline), and floating tasks (tasks without specific times). Note that these category
+    names are temporary names only. You should figure out what are the best names for these categories.
+    Are these names intuitive to end-users? Should they even care about consciously categorizing tasks?
+  </li>
+  <li>
+    CRUD (i.e., Create, Read, Update, Delete) support for tasks.
+  </li>
+  <li>
+    Undo operations (at least for the most recent action)
+  </li>
+  <li>
+    Some flexibility in the command format, i.e. support a few natural variations of the command format.
+  </li>
+  <li>
+    Simple search: A simple text search for finding an item if the user remembers some keywords from the
+    item description.
+  </li>
+  <li>
+    Some way to keep track of which items are done and which are yet to be done.
+  </li>
+  <li>
+    The ability to specify a specific folder and a file for data storage. With this feature,
+    Jim can choose to store the data file in a local folder controlled by a cloud syncing service (e.g. dropbox),
+    allowing him to access task data from multiple computers.
+  </li>
+</ol>
+</p>
+<p>
+  <strong>Nice to have features :</strong> (you may implement zero or more of these features)
+</p>
+<p>
+  Difficulty-low
+<ul>
+  <li>
+    AutomatedTesting : Achieve a very high level of automated testing.
+  </li>
+  <li>
+    RecurringTasks: Support for managing recurring tasks. e.g. CS2103 lectures recurring from week 1
+    to week 13 except in recess week.
+  </li>
+</ul>
+</p>
+<p>
+  Difficulty-medium
+<ul>
+  <li>
+    PowerSearch : More powerful and intelligent search. e.g. search for empty slots, near-match search,
+    auto-complete (similar to Google search box), filters for other attributes (e.g. start time).
+  </li>
+  <li>
+    FlexiCommands: High flexibility in command format. e.g., non-strict ordering of keywords, ability
+    to specify aliases for commands, support for more ‘natural’ language input, multiple undo/redo,
+    How flexible should the format be? As flexible, intuitive, and user-friendly as you can make it.
+  </li>
+</ul>
+</p>
+<p>
+  Difficulty-high
+<ul>
+  <li>
+    GoodGui: A good GUI to give visual feedback to the user e.g., in-built guidance for new users, good visual
+    feedback for actions, feedback while typing commands, hotkey to activate/hide, notifications, etc. conveying
+    more information visually (e.g. more important/urgent tasks stand out from the rest, longer events look
+    different from shorter events, easy to see free slots, etc.)
+  </li>
+  <li>
+    GoogleIntegration: Google Calendar integration. e.g. upload todo items to GCal, two-way sync, support for
+    GCal quick add command format, etc. You may also use the Google Tasks API for this.
+  </li>
+</ul>
+</p>
+<p>
+  You may also propose your own extra features (subject to approval).
+  Note that <span class="highlighted">the average amount of
+  code one member is expected to write for the project is 0.5-1.5 KLoC. 
+  Students are strongly encouraged (but not compulsory) to split the 
+  workload by feature, i.e. each student implement one or more features.
+  </span> Reason: Each student must write a significant amount of code and 
+  preferably have a understanding of full system.
+</p>
+<p>Adding more features may not necessarily increase your score as <span class="highlighted">half-baked features,
+  ill-fitting features, and buggy features will bring down your score</span>.</p>
