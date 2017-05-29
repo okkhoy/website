@@ -26,17 +26,20 @@
 </div>
 
 <div class="activity content-week7">
-  <h3 id="activity-content-week7" class="buttoned"><span>Pre-Tutorial Learning Activities</span></h3>
+  <h3 id="activity-content-week7" class="buttoned"><span>Self-Learning Activities</span></h3>
   <div>
     <div class="activity activity-week7">
-      <h3>T6A1. Work in a 2KLoC code base, as a team<img src="../images/2stars.png"/></h3>
+      <h3>TRA1. Work in a 2KLoC code base, as a team<img src="../images/star.png"/></h3>
       <div>
-        <p>To be done <span class="highlighted">with your Phase C team members</span>.
-        <p>Set up a GitHub organization for your Phase C, as described
-          <a href="http://www.comp.nus.edu.sg/~cs2103/AY1617S1/contents/handbook.html#handbook-appendixE-github"
-             target="_blank">here</a>. No need to set up a repo for the project yet. Setting up the org is enough.</p>
+        <p>To be done <span class="highlighted">with your Phase B team members</span>.
+        <p>Set up a GitHub organization for your Phase B, as described
+        <span onclick="getContentUsingAjax('handbook-appendixE-github', '#embedded-week7-orgsetup', 'organization-setup');" class="embedded-link">
+          here
+        </span>.
+        No need to set up a repo for the project yet. Setting up the organization is enough.</p>
+        <div id="embedded-week7-orgsetup"></div>
         <p>Complete the exercise in
-          <a href="https://github.com/nus-cs2103-AY1617S1/rcs#follow-the-feature-branch-workflow-lo-featurebranchworkflow"
+          <a href="https://github.com/nus-cs2103-AY1617S4/rcs#follow-the-feature-branch-workflow-lo-featurebranchworkflow"
              target="_blank"> Revision Control Software: Follow the Feature Branch Workflow [LO-FeatureBranchWorkflow]</a>
           but do note the following:</p>
         <ul>
@@ -45,7 +48,7 @@
               <li>Use the GitHub organization your created above.
               </li>
               <li>Repo to be forked to your new organization:
-                <a href="https://github.com/nus-cs2103-AY1617S1/addressbook-level3" target="_blank">Address Book
+                <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level3" target="_blank">Address Book
                   Level 3</a>.
               </li>
             </ul>
@@ -55,10 +58,21 @@
                 add that repo as a 'remote' to your existing addressbook-level3 clone on your computer.
                 (a local repo can have multiple remote repos as long as they share a common revision history).</li>
               <li>Feature to add: Do the exercise in
-                <a href="https://github.com/nus-cs2103-AY1617S1/addressbook-level3/blob/master/doc/LearningOutcomes.md#work-in-a-2kloc-code-base-lo-2kloc"
+                <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level3/blob/master/doc/LearningOutcomes.md#work-in-a-2kloc-code-base-lo-2kloc"
                    target="_blank"> AddressBook-Level3: Work in a 2KLoC code base [LO-2KLoC]</a>,
                 but take note of the following.</li>
               <ul>
+                <li>
+                  Choose features that can produce knowledge/code that can be reused in your own project later.
+<!--                  
+                  Here are some examples.
+                  <ul>
+                  <li><span class="highlighted">To be added</span></li>
+                  <li></li>
+                  <li></li>
+                  </ul>
+                </li>
+-->                
                 <li>Discuss with team members and decide which feature each of you will implement (to avoid
                   duplicating the same feature).
                 </li>
@@ -71,66 +85,107 @@
         </ul>
         <p>
           Submission: This is a team submission. Create a PR from the <code>master</code> branch your team repo to
-          <code>nus-cs2103-AY1617S1/addressbook-level3</code>. PR name is similar to previous tutorial activities,
+          <code>nus-cs2103-AY1617S4/addressbook-level3</code>. PR name is similar to previous tutorial activities,
           but omit the student name. e.g. <code>[T6A2][T11-B3]</code>
         </p>
       </div>
     </div>
     <div class="activity activity-week7">
-      <h3>T6A2. Get started on the project requirements and design <img src="../images/star.png"/></h3>
+      <h3>TRA2. Set up the sample project<img src="../images/star.png"/></h3>
       <div>
-        <p>To be done <span class="highlighted">with your Phase C team members</span>.
-        </p>
-        Start drafting <span onclick="getContentUsingAjax('handbook-project-v00', '#embedded-week7-t6a2');"><span
-              class="embedded-link">V0.0 Deliverables</span></span>
-        <div id="embedded-week7-t6a2"></div>
-
-        <p><strong>Suggested sequence</strong> : document product survey --> document user stories --> prioritize use stories -->
-          select user stories to include in your product --> design the product --> write the user guide <br>
-          Fill up Glossary and NFRs in parallel to the above.
-        </p>
-        <p>You may use a simple collaboration medium such as Google Docs for the above. You can transfer the content to
-          your GitHub repo in week 8 after the content has become somewhat stable. Given that you will be converting the
-          document to Markdown later, minimize effort spent on formatting.</p>
-        <p>
-          Submission: Proper submission will be in Week 8 (after converting to markdown and pushing to the repo).
-          In tutorial 7, just show your intermediate drafts to the tutor.
-        </p>
+        Ensure your team's GitHub organization name is as specified in
+          <span onclick="getContentUsingAjax('handbook-appendixE-github', '#embedded-week7-github', 'organization-setup');">
+            <span class="embedded-link">our requirements</span>.
+          </span>
+        Follow the
+          <span onclick="getContentUsingAjax('handbook-appendixE-github', '#embedded-week7-github', 'repo-setup');">
+            <span class="embedded-link">repo setup</span>
+          </span> and
+          <span onclick="getContentUsingAjax('handbook-appendixE-github', '#embedded-week7-github', 'issue-tracker-setup');">
+            <span class="embedded-link">issue tracker setup</span>
+          </span>
+        instructions in our handbook to set up the repo for your project. <br>
+        <div id="embedded-week7-github"></div>
+<!--        
       </div>
     </div>
     <div class="activity activity-week7">
-      <h3>T6A3. DIP, DI, OCP, C&C <img src="../images/2stars.png"/></h3>
+      <h3>TRA3. Set up the sample project (continued)<img src="../images/star.png"/></h3>
+      <div>
+-->      
+        <ol>
+          <li>Ensure you can pass all the tests locally.</li>
+          <li>Set up <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level4/blob/master/docs/UsingTravis.md" target="_blank">Travis</a> for your fork. After setting up Travis correctly, you should be able to view the build
+            status of your project from the 'Dashboard' link in the module website (see the main menu at the top).
+            
+            [FYI, <a href="https://github.com/nus-cs2103/website/blob/master/dashboard/Teams-AY1617S1.md" target="_blank">
+              here</a> is the dashboard page from the previous semester]
+          </li>
+          <li>Read the <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level4/blob/master/docs/DeveloperGuide.md#design"
+                          target="_blank">'Design' Section of the Developer Guide</a>
+            to get a high-level understanding of the design before you start reading the code.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="activity activity-week7">
+      <h3>TRA3. Get started on V0.0 <img src="../images/star.png"/></h3>
+      <div>
+        Prepare <span onclick="getContentUsingAjax('handbook-project-v00', '#embedded-week7-t6a2');"><span
+              class="embedded-link">V0.0 Deliverables</span></span>
+        <div id="embedded-week7-t6a2"></div>
+
+        <p><strong>Suggested sequence</strong> : document product survey &#8594; brainstorm user stories &#8594; prioritize use stories &#8594;
+          select user stories to include in your product &#8594; design the product &#8594; write the user guide <br>
+          Fill up Glossary and NFRs in parallel to the above.
+        </p>
+        <p>When creating these documents, initially you may use a simple collaboration medium such as Google Docs.
+          You can transfer the content to your GitHub repo after the content has become somewhat stable. </p>
+          Tip: find an Eclipse plugin to preview Markdown documents.
+        </p>
+      </div>
+    </div>
+<!--    
+    <div class="activity activity-week7">
+      <h3>T6A4. DIP, DI, OCP, C&C <img src="../images/2stars.png"/></h3>
       <div>
         <p>Complete *some* of the exercises given in: <br>
 
-          <a href="https://github.com/nus-cs2103-AY1617S1/addressbook-level3/blob/master/doc/LearningOutcomes.md#apply-dependency-inversion-principle-lo-dip" target="_blank">
+          <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level3/blob/master/doc/LearningOutcomes.md#apply-dependency-inversion-principle-lo-dip" target="_blank">
             AddressBook-Level3: Apply Dependency Inversion Principle [LO-DIP]</a><br>
-          <a href="https://github.com/nus-cs2103-AY1617S1/addressbook-level3/blob/master/doc/LearningOutcomes.md#use-dependency-injection-lo-di" target="_blank">
+          <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level3/blob/master/doc/LearningOutcomes.md#use-dependency-injection-lo-di" target="_blank">
             AddressBook-Level3: Use Dependency Injection [LO-DI]</a><br>
-          <a href="https://github.com/nus-cs2103-AY1617S1/addressbook-level3/blob/master/doc/LearningOutcomes.md#apply-open-closed-principle-lo-ocp" target="_blank">
+          <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level3/blob/master/doc/LearningOutcomes.md#apply-open-closed-principle-lo-ocp" target="_blank">
             AddressBook-Level3: Apply Open-Closed Principle [LO-OCP]</a><br>
-          <a href="https://github.com/nus-cs2103-AY1617S1/addressbook-level3/blob/master/doc/LearningOutcomes.md#analyze-coupling-and-cohesion-of-designs-lo-couplingcohesion" target="_blank">
+          <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level3/blob/master/doc/LearningOutcomes.md#analyze-coupling-and-cohesion-of-designs-lo-couplingcohesion" target="_blank">
             AddressBook-Level3: Analyze Coupling and Cohesion of designs [LO-CouplingCohesion]</a><br>
         </p>
         <p>
           Submission:
-          Create a PR with your code (similar to past weeks) but <span class="highlighted">use your Phase C team ID</span>
+          Create a PR with your code (similar to past weeks) but <span class="highlighted">use your Phase B team ID</span>
           [<span onclick="getContentUsingAjax('handbook-appendixE-github', '#embedded-week7-pr-steps', 'tutorial-pr-instructions');"><span class="embedded-link">Instructions</span></span>]
         <div id="embedded-week7-pr-steps"></div>
         </p>
       </div>
     </div>
+-->    
   </div>
 </div>
 
+<!--
 <div class="tutorial content-week7">
-  <h3 id="tutorial-content-week7" class="buttoned"><span>Tutorial 6: Getting started with the project, Feature branch
+  <h3 id="tutorial-content-week7" class="buttoned"><span>Tutorial 6: V0.0, Feature branch
     flow, DIP, DI, OCP, C&C</span></h3>
   <div>
     <div class="tutorial tutorial-week7">
       <h3>Discuss pre-tutorial learning activities</h3>
       <div>
         As usual, discuss with tutor/peers pre-tutorial learning activities.<br>
+      </div>
+    </div>
+    <div class="tutorial tutorial-week7">
+      <h3>[After the tutorial] Submit peer evaluations</h3>
+      <div>
+        Note that you need to submit the first peer evaluation for phase B this week.<br>
       </div>
     </div>
   </div>
@@ -209,7 +264,7 @@
         </p>
         <ul>
           <li>
-            Refer <a href="https://github.com/nus-cs2103-AY1617S1/addressbook-level4/blob/master/docs/LearningOutcomes.md" target="_blank">
+            Refer <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level4/blob/master/docs/LearningOutcomes.md" target="_blank">
              Address Book (Level 4) Learning Outcomes page</a> for more resources.
           </li>
           <li>
@@ -254,7 +309,7 @@
         </p>
         <ul>
           <li>
-            Refer <a href="https://github.com/nus-cs2103-AY1617S1/addressbook-level4/blob/master/docs/LearningOutcomes.md" target="_blank">
+            Refer <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level4/blob/master/docs/LearningOutcomes.md" target="_blank">
             Address Book (Level 4) Learning Outcomes page</a> for more resources.
           </li>
         </ul>
@@ -268,23 +323,4 @@
     </div>
   </div>
 </div>
-<!--
-<div class="deadline content-week7">
-  <h3 id="deadline2-content-week7" class="buttoned"><span>Deadlines </span></h3>
-  <div>
-    <div class="deadline deadline2-week7">
-      <h3>[Sat (<span class="date-marker" week="7" day="6"></span>) 23:59] Phase B Peer Evaluation</h3>
-      <div>
-        The Phase B Peer Evaluation opens on [Tue (<span class="date-marker" week="4" day="2"></span>) 22:00]<br>
-        You will receive an email from TEAMMATES when the session opens.<br>
-        If you did not receive an email, you can still go to <a href="https://teammatesv4.appspot.com" target="_blank">
-        TEAMMATES</a>, login using your Google ID, and submit your peer evaluation, provided that you have joined
-        TEAMMATES previously.<br>
-        Submitting peer evaluations is compulsory. <span class="highlighted">If you routinely miss submitting peer
-        evaluations, you forfeit your participation marks.</span>
-      </div>
-    </div>
-  </div>
-</div>
-
 -->
