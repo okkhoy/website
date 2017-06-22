@@ -66,7 +66,28 @@
         Moreover, ensure that tests and documentation have been updated where necessary.
       </div>
     </div>
+	 <div class="things-to-do things-to-do-week7">
+      <h3>Read up more about project requirements</h3>
+      <div>
+        Refresh your memory about project requirements:
+        <span onclick="getContentUsingAjax('handbook-project-product', '#embedded-week7-project');"><span
+            class="embedded-link">The Product</span></span> |
+        <span onclick="getContentUsingAjax('handbook-project-scope', '#embedded-week7-project');"><span
+            class="embedded-link">Project Scope</span></span> |
+        <span onclick="getContentUsingAjax('handbook-project-constraints', '#embedded-week7-project');"><span
+            class="embedded-link">Project Constraints</span></span> |
+        <span onclick="getContentUsingAjax('handbook-project-deliverables', '#embedded-week7-project');"><span
+            class="embedded-link">Deliverables</span></span>|
+        <span onclick="getContentUsingAjax('handbook-project-v00', '#embedded-week7-project');"><span
+            class="embedded-link">V0.0</span></span>
+        <div id="embedded-week7-project"></div>
 
+        <p>Project requirements was also covered during lecture 1. If you missed that lecture, please view the
+          webcast.</p>
+
+      </div>
+    </div>
+	
 
     <div class="things-to-do things-to-do-week6">
       <h3>Configure Eclipse indentation style</h3>
@@ -118,8 +139,36 @@
         </p>
       </div>
     </div>
-    <div class="activity activity-week6">
-      <h3>T5A3. JavaFx<img src="../images/2stars.png"/></h3>
+    
+	<div class="activity activity-week6">
+      <h3>T7A1. Reach V0.1<img src="../images/star.png"/></h3>
+      <div>
+        Work as a team to deliver V0.1. Note the following:
+        <ul>
+          <li>Refer to
+            <span onclick="getContentUsingAjax('handbook-appendixE-github', '#embedded-week9-workflow', 'workflow');">
+            <span class="embedded-link">our instructions in the handbook</span> to find possible workflow options.<br>
+            </span><div id="embedded-week9-workflow"></div>
+          </li>
+          <li><span class="highlighted">Divide components (GUI, Model, etc.) among team members</span>.
+            Learn the code of your component. In V0.1 (and V0.2), try to limit your work to your component only.
+          </li>
+          <li>
+            <span class="highlighted">Change code in small steps</span>, run tests after each step,
+            commit each step, and merge often.
+          </li>
+        </ul>
+        Submission:<br>
+        As your project starts to diverge from AddressBook codebase, it is no longer 
+        meaningful to use PRs to indicate progress. <br>
+        Instead, push all the relevant changes to the main branch of your repo once 
+        it reaches <code>V0.1</code> requirements. Remember to use 
+        <a href="http://git-scm.com/book/en/v2/Git-Basics-Tagging" target="_blank">
+            git tag</a> to annotate that commit as <code>V0.1</code>.
+        </div>
+    </div>
+	<div class="activity activity-week6">
+      <h3>T5A3. JavaFx<img src="../images/3stars.png"/></h3>
       <div>
         <p>Complete the exercises for the learning outcomes: <br>
           <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level3/blob/master/doc/LearningOutcomes.md#use-java-fx-for-gui-programming-lo-javafx" target="_blank">
@@ -172,7 +221,7 @@
 </div>
 
 <div class="tutorial content-week6">
-  <h3 id="tutorial-content-week6" class="buttoned"><span>Tutorial 5: Requirements, Polymorphism, JavaFX, Centralized workflow</span></h3>
+  <h3 id="tutorial-content-week6" class="buttoned"><span>Tutorial 5: Requirements, Polymorphism, JavaFX, Project V0.1</span></h3>
   <div>
     <div class="tutorial tutorial-week6">
       <h3>Discuss pre-tutorial learning activities</h3>
@@ -180,24 +229,19 @@
         As usual, discuss with tutor/peers pre-tutorial learning activities.<br>
       </div>
     </div>
-<!--  </div> -->
-    <div class="tutorial tutorial-week6">
-      <h3>[last 15 minutes] Form phase B teams</h3>
+	<div class="tutorial tutorial-week6">
+      <h3>V0.0</h3>
       <div>
-        Follow tutor's directions to form Phase B teams. Before leaving the tutorial,
-        <span class="highlighted">go to IVLE and sign up for the correct phase B teams</span>.<br>
-<!--
-        <div class="additional-info">
-          ATTENTION: Now that you are with your project team, <span class="highlighted">We HIGHLY recommend</span>
-          that you do team activities in the next two tutorials <code>T5A4 (Centralized Workflow)</code> and
-          <code>T6A1 (Work in a 2KLoC code base, as a team)</code> : Doing so will help you to prepare for the
-          project as well as to get a rough measure of the technical competence of your team members.
-          Knowing the competence level of your team members minimize the risk of allocating weak members more
-          responsibilities than they can handle, which can down the whole project.
-        </div>
--->
+        Give an overview of your product using the user guide.<br>
       </div>
     </div>
+    <div class="tutorial tutorial-week6">
+      <h3>V0.1</h3>
+      <div>
+        Demo your V0.1 to the tutor.<br>
+      </div>
+    </div>
+
   </div>
 </div>
 
