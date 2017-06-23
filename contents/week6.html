@@ -98,6 +98,139 @@
   </div>
 </div>
 
+<div class="lecture content-week6">
+  <h3 id="lecture-content-week6" class="buttoned">
+    <span>Lecture 6: Design Quality, Product Design</span>
+  </h3>
+  <div>
+
+   
+
+    <div class="lecture lecture-week6">
+      <h3>L5 Recap</h3>
+      <div>
+        [<a href="../files/slides/L5Recap.pptx" target="_blank">Slides</a>]
+        <!-- [Slides] -->
+      </div>
+    </div>
+
+    <div class="lecture lecture-week6">
+      <h3>Part 1 - To Tighten or Loosen: What Makes a Good Design [35 minutes]</h3>
+      <div>
+        <table class="padded-borderless lecture-content-table">
+          <tr>
+            <td>
+              <img src="../images/coupling.png">
+            </td>
+            <td>
+              <p>
+                <!-- [Handout] -->
+                <!-- [<a href="../files/handouts/%5bL6P1%5d%20To%20Tighten%20or%20Loosen%20-%20What%20Makes%20a%20Good%20Design.pdf" target="_blank">Handout</a>] -->
+                <!-- [Slides] -->
+                [<a href="../files/slides/L6P1.%20To%20Tighten%20or%20Loosen%20-%20What%20Makes%20a%20Good%20Component.pptx" target="_blank">Slides</a>]
+              </p>
+              <span class="dim">
+              <p>
+                <strong>Overview:</strong> Components should have high cohesion and low coupling.
+              </p>
+              <p>
+                <strong>Topics:</strong> Coupling, Cohesion, Open-Closed Principle (OCP), Dependency Inversion Principle (DIP)
+              </p>
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+     <div class="lecture lecture-week6">
+      <h3>Part 2 - The View from the Top: Architecture [40 minutes]</h3>
+      <div>
+        <table class="padded-borderless lecture-content-table">
+          <tr>
+            <td>
+              <img src="../images/archi roadmap.png">
+            </td>
+            <td>
+              <p>
+                [<a href="../files/handouts/%5bL7P1%5d%20The%20View%20from%20the%20Top%20-%20Architecture.pdf" target="_blank">Handout</a>]
+                [<a href="../files/slides/L7P1.%20The%20View%20from%20the%20Top%20-%20Architecture.pptx" target="_blank">Slides</a>]
+              </p>
+              <span class="dim">
+                  <p>
+                      Overview: The architectural design should break the product into a small number of well-specified components that can be developed in parallel.
+                      UML sequence diagrams can be used to figure out the API of those components.
+                  </p>
+                  <p>
+                      Topics: software architecture, components and APIs, modeling component behavior using seq diagrams, different approaches to design
+                  </p>
+              </span>
+            </td>
+          </tr>
+        </table>
+        <p>
+          Resources:
+        </p>
+        <ul>
+          <li>
+            <span class="highlighted">[Must watch]</span> A three-minutes video we created for you
+            <a target="_blank" href="https://www.youtube.com/watch?v=Un80XoRT1ME">Game of Tic-Tac-Toe: A worked example of designing architecture and discovering component APIs</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+    <div class="lecture lecture-week6">
+      <h3>Part 3 - Putting up defenses to protect our code [30 minutes]</h3>
+      <div>
+        <table class="padded-borderless lecture-content-table">
+          <tr>
+            <td>
+              <img src="../images/defensive.png">
+            </td>
+            <td>
+              <p>
+                [<a href="../files/handouts/%5bL7P2%5d%20Putting%20up%20defenses%20to%20protect%20our%20code.pdf" target="_blank">Handout</a>]
+                [<a href="../files/slides/L7P2.%20Putting%20up%20defenses%20to%20protect%20our%20code.pptx" target="_blank">Slides</a>]
+              </p>
+              <span class="dim">
+              <p>
+                <strong>Overview:</strong> Proper error handling is a must for any production system. The
+                defensive coding approach can lower the risk of component failure even further.
+              </p>
+              <p>
+                <strong>Topics:</strong> assertions, logging,  defensive programming
+              </p>
+              </span>
+            </td>
+          </tr>
+        </table>
+        <p>
+          Resources:
+        </p>
+        <ul>
+          <li>
+            Refer <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level4/blob/master/docs/LearningOutcomes.md" target="_blank">
+             Address Book (Level 4) Learning Outcomes page</a> for more resources.
+          </li>
+          <li>
+            Interesting reading:
+            <ul>
+              <li>
+                [Quora answer] <a target="_blank" href="https://www.quora.com/What-is-the-code-quality-at-Google-like/answer/Jeremy-Hoffman">
+                What is the code quality at Google like?</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
 <div class="activity content-week6">
   <h3 id="activity-content-week6" class="buttoned"><span>Pre-Tutorial Learning Activities</span></h3>
   <div>
@@ -242,149 +375,6 @@
       </div>
     </div>
 
-  </div>
-</div>
-
-<div class="lecture content-week6">
-  <h3 id="lecture-content-week6" class="buttoned">
-    <span>Lecture 6: Design Quality, Product Design</span>
-  </h3>
-  <div>
-
-    <div class="lecture lecture-week6">
-      <h3>Pre-lecture activity</h3>
-      <div>
-        Give this problem a try (at least some thoughts) before coming to the lecture. We are going to do it as an exercise during the lecture (30 minutes).
-        <br>
-        <br>
-        Imagine you are building an online system called <b>TeamFormer</b>. TeamFormer is a system for helping CS2103 students during team forming period. It lets students record who is in which team.
-        Students can use the system to find teams short of members and students looking for teams, easing the team forming process.
-        Note that the system is not meant as a platform for students to communicate with each other to find team members.
-        Students are supposed to talk to each other and form teams outside the system, as they do now.
-        TeamFormer simply helps students to see the team forming status of the class (e.g., who has teams and who don’t) and record their own team after forming a team.
-        It is also meant to ease the team-forming-related workload of instructors.
-        <br>
-        <br>
-        What should be the following elements of TeamFormer requirements?
-        <ul>
-          <li>
-            Vision: {A short statement describing the product’s objective/direction}
-          </li>
-          <li>
-            User types/roles: Students, Instructors, {any other user types?}
-          </li>
-          <li>
-            High-level workflow: {In the process of team forming, who will do what first, and what will happen next, and so on? Where does TeamFormer fits into this workflow?}
-          </li>
-          <li>
-            Scope: {What will TeamFormer do, and more importantly, what team-forming-related things it will NOT do?}
-          </li>
-        </ul>
-        Specify important requirements of TeamFormer as a list of User Stories.
-        <br>
-        Write one use case (i.e., textual form) for one of the user stories that you think will result in the most complex user interaction.
-        <br>
-        Sketch a UI for TeamFormer.
-      </div>
-    </div>
-
-    <div class="lecture lecture-week6">
-      <h3>L5 Recap</h3>
-      <div>
-        [<a href="../files/slides/L5Recap.pptx" target="_blank">Slides</a>]
-        <!-- [Slides] -->
-      </div>
-    </div>
-
-    <div class="lecture lecture-week6">
-      <h3>Part 1 - To Tighten or Loosen: What Makes a Good Design [35 minutes]</h3>
-      <div>
-        <table class="padded-borderless lecture-content-table">
-          <tr>
-            <td>
-              <img src="../images/coupling.png">
-            </td>
-            <td>
-              <p>
-                <!-- [Handout] -->
-                <!-- [<a href="../files/handouts/%5bL6P1%5d%20To%20Tighten%20or%20Loosen%20-%20What%20Makes%20a%20Good%20Design.pdf" target="_blank">Handout</a>] -->
-                <!-- [Slides] -->
-                [<a href="../files/slides/L6P1.%20To%20Tighten%20or%20Loosen%20-%20What%20Makes%20a%20Good%20Component.pptx" target="_blank">Slides</a>]
-              </p>
-              <span class="dim">
-              <p>
-                <strong>Overview:</strong> Components should have high cohesion and low coupling.
-              </p>
-              <p>
-                <strong>Topics:</strong> Coupling, Cohesion, Open-Closed Principle (OCP), Dependency Inversion Principle (DIP)
-              </p>
-              </span>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-
-    <div class="lecture lecture-week6">
-      <h3>Part 2 - From the magician's hat: designing the product [35 minutes]</h3>
-      <div>
-        <table class="padded-borderless lecture-content-table">
-          <tr>
-            <td>
-              <img src="../images/10 observations.png" style="width: 200px0">
-            </td>
-            <td>
-              <p>
-                <!-- [Handout] -->
-                <!-- [<a href="../files/handouts/%5bL6P2%5d%20From%20the%20Magician%92s%20Hat%20-%20Designing%20the%20Product.pdf" target="_blank">Handout</a>] -->
-                <!-- [Slides] -->
-                [<a target="_blank"
-                    href="../files/slides/L6P2.%20From%20the%20magicians%20hat%20-%20designing%20the%20product.pptx">Slides</a>]
-              </p>
-              <span class="dim">
-        <p>
-            <strong>Overview:</strong> It is important to consider the proposed product
-            from the users' point of view and provide good solutions to users' problems
-            rather than slap together a slew of features that you as developers find
-            interesting. UI prototypes are especially useful in visualizing the product
-            early and improving the user experience.
-        </p>
-        <p>
-            <strong>Topics:</strong> product design
-        </p>
-        </span>
-            </td>
-          </tr>
-        </table>
-        <p>
-          Interesting side reading:
-        </p>
-        <ul>
-          <li>
-            [Web article]
-            <a target="_blank" href="http://radar.oreilly.com/2015/06/the-11-deadly-sins-of-product-development.html">
-              The 11 deadly sins of product development</a>
-          </li>
-          <li>
-            [Web article] <a target="_blank" href="http://asktog.com/atc/principles-of-interaction-design/">
-            First Principles of Interaction Design</a> - This it totally out of
-            scope of this module, but a good read for folks who are deeply interested
-            in designing good products and can’t wait till you read relevant modules later.
-          </li>
-          <li>
-            [Web article] <a target="_blank" href="http://sachagreif.com/flat-pixels/">
-            skeuomorphism vs flat design</a> - For those who are interested in GUI design.
-            Out of scope of this module.
-          </li>
-          <li>
-            [Web article]
-            <a target="_blank" href="http://venturebeat.com/2014/11/02/founder-stories-people-dont-want-drills/">
-              People don’t want drills, they want holes</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
   </div>
 </div>
 
