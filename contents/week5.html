@@ -1,100 +1,123 @@
-<div class="activity content-week5">
-  <h3 id="activity-content-week5" class="buttoned"><span>Pre-Tutorial Learning Activities</span></h3>
+<div class="deadline content-week5">
+  <h3 id="deadline1-content-week5" class="buttoned"><span>Deadlines </span></h3>
   <div>
-    
-    <div class="activity activity-week5">
-      <h3>T4A4. Use interfaces to apply ISP <img src="../images/2stars.png"/></h3>
+    <div class="deadline deadline1-week5">
+      <h3>[Tue, 2pm] Complete phase A peer evaluation and TEAMMATES profile</h3>
       <div>
-        <p>Complete the exercise for the learning outcome :<br>
-          <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level2/blob/master/doc/LearningOutcomes.md#follow-interface-segregation-principle-lo-isp" target="_blank">
-            AddressBook-Level2: Follow Interface Segregation Principle [LO-ISP]</a>
-        </p>
-        <p>
-          Submission: same as T4A2
-        </p>
-      </div>
-    </div>
-    <div class="activity activity-week5">
-      <h3>T4A5. Use association classes <img src="../images/2stars.png"/></h3>
-      <div>
-        <p>Complete the exercise for the learning outcome :<br>
-          <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level2/blob/master/doc/LearningOutcomes.md#use-association-classes-lo-associationclass" target="_blank">
-            AddressBook-Level2: Use Association Classes [LO-AssociationClass]</a>
-        </p>
-        <p>
-          Submission: same as T4A2
-        </p>
-      </div>
-    </div>
-    <div class="activity activity-week5">
-      <h3>T4A6. Use JUnit to write automated tests <img src="../images/2stars.png"/></h3>
-      <div>
-        <p>Complete the exercise for the learning outcome :<br>
-          <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level2/blob/master/doc/LearningOutcomes.md#use-junit-to-implement-unit-tests-lo-junit" target="_blank">
-            AddressBook-Level2: Use JUnit to implement unit tests [LO-JUnit]</a>
-        </p>
-        <p>
-          Submission: same as T4A2
-        </p>
-      </div>
-    </div>
-   <div class="activity activity-week5">
-      <h3>T6A2. Complete V0.0<img src="../images/star.png"/></h3>
-      <div>
-        Complete any remaining parts of V0.0 that you could not finish in the previous week.
-        Transfer the content to the relevant pages in your main repo.
-        <br>
-        Submission: Create a PR from your team repo <code>master</code> branch to
-        <code>https://github.com/nus-cs2103-AY1617S4/addressbook-level4</code>.
-        Name it <code>[T4][Your-Team-ID]</code> 
-      </div>
-    </div>
-  </div>
-</div>
-<div class="tutorial content-week5">
-  <h3 id="tutorial-content-week5" class="buttoned">
-    <span>Tutorial 4: OOP (Intermediate), JUnit, Project V0.0</span></h3>
-  <div>
-    <div class="tutorial tutorial-week5">
-      <h3>Discuss pre-tutorial learning activities</h3>
-      <div>
-        As usual, discuss with tutor/peers pre-tutorial learning activities.<br>
-      </div>
-    </div>
-<!--    
-    <div class="tutorial tutorial-week5">
-      <h3>[last 15 minutes] Form phase B teams</h3>
-      <div>
-        Follow tutor's directions to form Phase B teams. Before leaving the tutorial,
-        <span class="highlighted">go to IVLE and sign up for the correct phase B teams</span>.<br>
+        You will be receiving the submission email from the TEAMMATES system soon. Follow the link in the email
+        to submit the peer evaluation for students you interacted with during tutorials so far.<br>
+        Note the
+        <span onclick="getContentUsingAjax('handbook-peerEvaluations', '#embedded-week6-teammates', 'extra-requirements');" class="embedded-link">
+          Extra Requirements</span> 
+        for using TEAMMATES.
+        <div id="embedded-week6-teammates"></div>
 
-        <div class="additional-info">
-          ATTENTION: Now that you are with your project team, <span class="highlighted">We HIGHLY recommend</span>
-          that you do team activities in the next two tutorials <code>T5A4 (Centralized Workflow)</code> and
-          <code>T6A1 (Work in a 2KLoC code base, as a team)</code> : Doing so will help you to prepare for the
-          project as well as to get a rough measure of the technical competence of your team members.
-          Knowing the competence level of your team members minimize the risk of allocating weak members more
-          responsibilities than they can handle, which can down the whole project.
-        </div>
       </div>
     </div>
-    
-    <div class="tutorial tutorial-week5">
-      <h3>[After the tutorial] Submit peer evaluations</h3>
+
+    <div class="deadline deadline1-week5">
+      <h3>[Tue, 6pm] Feedback for tutors</h3>
       <div>
-        Note that you need to submit the final peer evaluation for phase A this week.<br>
+      Now it is time to give your honest feedback on the module via the IVLE mid-semester survey.  Apart from seeking improvements in the module content and delivery, your feedback will also help our tutors prepare themselves better for the rest of the semester.
       </div>
     </div>
--->    
+	
+	
+
   </div>
 </div>
+
+<div class="things-to-do content-week5">
+  <h3 id="things-to-do-content-week5" class="buttoned"><span>Things to do</span></h3>
+  <div>
+    <div class="things-to-do things-to-do-week5">
+      <h3>Note the following refinement to the PR workflow</h3>
+      <div>
+        You are no longer required to add a <code>Ready for review</code> comment to every PR
+        (if there is no comment, we assume the PR is ready for review).<br>
+        Instead, if the PR is not ready for review yet, add a comment <code>Work in progress</code>.
+        When the PR is ready, add a comment <code>Ready for review</code>.
+      </div>
+    </div>
+
+    <div class="things-to-do things-to-do-week5">
+      <h3>Submitting clean pull requests</h3>
+      <div>
+        You are reminded to keep PRs independent of each other.
+        Always switch to the master branch before creating a new branch to avoid commits from one PR being included in other PRs.
+        Before submitting a PR, ensure that the code is clean,
+        i.e. compliance with coding style and no commented out code.
+        Moreover, ensure that tests and documentation have been updated where necessary.
+      </div>
+    </div>
+	
+	 <div class="things-to-do things-to-do-week5">
+      <h3>Handbook sections to read</h3>
+      <div>
+        <ul>
+          <li>
+            Project:
+            <span onclick="getContentUsingAjax('handbook-project-v01', '#embedded-week9-handbook');">
+              <span class="embedded-link">V0.1 Requirements</span>
+            </span>|
+            <span onclick="getContentUsingAjax('handbook-appendixF-teamworkIssues', '#embedded-week9-handbook');">
+              <span class="embedded-link">
+                <span class="highlighted">What to do if you have problematic team members</span>
+              </span>
+            </span>
+            <div id="embedded-week9-handbook"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+	
+  </div>
+</div>
+
 
 <div class="lecture content-week5">
   <h3 id="lecture-content-week5" class="buttoned">
-    <span>Lecture 5: Advanced OOP, Requirements</span>
+    <span>Lecture 5: Advanced OOP, design and getting started with developer testing</span>
   </h3>
   <div>
 
+	 <div class="lecture lecture-week5">
+      <h3>Pre-lecture activity</h3>
+      <div>
+        Give this problem a try (at least some thoughts) before coming to the lecture. We are going to do it as an exercise during the lecture (30 minutes).
+        <br>
+        <br>
+        Imagine you are building an online system called <b>TeamFormer</b>. TeamFormer is a system for helping CS2103 students during team forming period. It lets students record who is in which team.
+        Students can use the system to find teams short of members and students looking for teams, easing the team forming process.
+        Note that the system is not meant as a platform for students to communicate with each other to find team members.
+        Students are supposed to talk to each other and form teams outside the system, as they do now.
+        TeamFormer simply helps students to see the team forming status of the class (e.g., who has teams and who don't) and record their own team after forming a team.
+        It is also meant to ease the team-forming-related workload of instructors.
+        <br>
+        <br>
+        What should be the following elements of TeamFormer requirements?
+        <ul>
+          <li>
+            Vision: {A short statement describing the product's objective/direction}
+          </li>
+          <li>
+            User types/roles: Students, Instructors, {any other user types?}
+          </li>
+          <li>
+            High-level workflow: {In the process of team forming, who will do what first, and what will happen next, and so on? Where does TeamFormer fits into this workflow?}
+          </li>
+          <li>
+            Scope: {What will TeamFormer do, and more importantly, what team-forming-related things it will NOT do?}
+          </li>
+        </ul>
+        Specify important requirements of TeamFormer as a list of User Stories.
+        <br>
+        Write one use case (i.e., textual form) for one of the user stories that you think will result in the most complex user interaction.
+        <br>
+        Sketch a UI for TeamFormer.
+      </div>
+    </div>
+	
     <div class="lecture lecture-week5">
       <h3>Recap</h3>
       <div>
@@ -135,46 +158,236 @@
       </div>
     </div>
     <div class="lecture lecture-week5">
-      <h3>Part 2 - Problem before solution: figuring out requirements</h3>
+      <h3>Part 2 - From the magician's hat: designing the product [35 minutes]</h3>
       <div>
         <table class="padded-borderless lecture-content-table">
           <tr>
             <td>
-              <img src="../images/specifying.png"  style="width: 249.50px; height: 157.53px;">
+              <img src="../images/10 observations.png" style="width: 200px0">
             </td>
             <td>
               <p>
-                <!--[<a href="../files/handouts/%5bL5P2%5d%20%20Problem%20before%20Solution%20-%20Figuring%20out%20Requirements.pdf" target="_blank">Handout</a>]-->
+                <!-- [Handout] -->
+                <!-- [<a href="../files/handouts/%5bL6P2%5d%20From%20the%20Magician%92s%20Hat%20-%20Designing%20the%20Product.pdf" target="_blank">Handout</a>] -->
                 <!-- [Slides] -->
-                [<a target="_blank" href="../files/slides/L5P2.%20Problem%20before%20solution%20-%20figuring%20out%20requirements.pptx">Slides</a>]
+                [<a target="_blank"
+                    href="../files/slides/L6P2.%20From%20the%20magicians%20hat%20-%20designing%20the%20product.pptx">Slides</a>]
               </p>
               <span class="dim">
-            <p>
-                <strong>Overview:</strong> There are many ways to gather, analyze and document requirements.
-            </p>
-            <p>
-                <strong>Topics:</strong> establishing requirements, specifying requirements
-            </p>
-            </span>
+        <p>
+            <strong>Overview:</strong> It is important to consider the proposed product
+            from the users' point of view and provide good solutions to users' problems
+            rather than slap together a slew of features that you as developers find
+            interesting. UI prototypes are especially useful in visualizing the product
+            early and improving the user experience.
+        </p>
+        <p>
+            <strong>Topics:</strong> product design
+        </p>
+        </span>
             </td>
           </tr>
         </table>
         <p>
-          Side readings:
+          Interesting side reading:
         </p>
         <ul>
           <li>
-            Humor :
-            <a href="http://dilbert.com/strip/2003-01-10" target="_blank">Dilbert on user stories</a>,
-            <a href="http://dilbert.com/strip/2001-04-14" target="_blank">Dilbert asks a user for requirements</a>,
-            <a href="http://dilbert.com/strip/2006-01-29" target="_blank"> Alice asks a user for requirements</a>
+            [Web article]
+            <a target="_blank" href="http://radar.oreilly.com/2015/06/the-11-deadly-sins-of-product-development.html">
+              The 11 deadly sins of product development</a>
+          </li>
+          <li>
+            [Web article] <a target="_blank" href="http://asktog.com/atc/principles-of-interaction-design/">
+            First Principles of Interaction Design</a> - This it totally out of
+            scope of this module, but a good read for folks who are deeply interested
+            in designing good products and can't wait till you read relevant modules later.
+          </li>
+          <li>
+            [Web article] <a target="_blank" href="http://sachagreif.com/flat-pixels/">
+            skeuomorphism vs flat design</a> - For those who are interested in GUI design.
+            Out of scope of this module.
+          </li>
+          <li>
+            [Web article]
+            <a target="_blank" href="http://venturebeat.com/2014/11/02/founder-stories-people-dont-want-drills/">
+              People don't want drills, they want holes</a>
           </li>
         </ul>
       </div>
     </div>
+	
 
+	<div class="lecture lecture-week5">
+       <h3>Part 3 - Never Too Early to Test: an Introduction to Early Developer Testing</h3>
+       <div>
+         <table class="padded-borderless lecture-content-table">
+           <tr>
+             <td>
+               <img src="../images/yee ha.png">
+             </td>
+             <td>
+               <p>
+                 <!-- [<a href="../files/handouts/%5bL4P2%5d%20Never%20Too%20Early%20to%20Test%20-%20an%20Introduction%20to%20Early%20Developer%20Testing.pdf" target="_blank">
+                 Handout</a>]  -->
+                 [Slides] 
+                 <!-- [<a target="_blank" href="../files/slides/L4P2.%20Never%20Too%20Early%20to%20Test%20-%20an%20Introduction%20to%20Early%20Developer%20Testing.pptx">Slides</a>]-->
+               </p>
+               <span class="dim">
+                  <p>
+                      Overview: Testing should be done earlier and at lower levels without relying entirely on system testing or higher-level component testing.
+                      API testing can be automated using testing frameworks such as JUnit.
+                      TDD is a unique approach to ensure the testability of the component from the beginning and not as an afterthought.
+                  </p>
+                  <p>
+                      Topics: developer testing, automated unit testing, TDD
+                  </p>
+                </span>
+             </td>
+           </tr>
+         </table>
+         <p>
+           Resources:
+         </p>
+         <ul>
+           <li>
+             <span class="highlighted"><a target="_blank" href="testingFaq.html">Questions about unit testing frequently asked by CS2103 students (and answers)</a></span>
+           </li>
+           <li>
+             More resources given at
+             <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level2/blob/master/doc/LearningOutcomes.md" target="_blank">
+               addressbook-level2</a> (see under testing-related learning outcomes).
+           </li>
+         </ul>
+       </div>
+     </div>
   </div>
 </div>
+
+
+<div class="activity content-week5">
+  <h3 id="activity-content-week5" class="buttoned"><span>Pre-Tutorial Learning Activities</span></h3>
+  <div>
+    
+    <div class="activity activity-week5">
+      <h3>T4A4. Use interfaces to apply ISP <img src="../images/2stars.png"/></h3>
+      <div>
+        <p>Complete the exercise for the learning outcome :<br>
+          <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level2/blob/master/doc/LearningOutcomes.md#follow-interface-segregation-principle-lo-isp" target="_blank">
+            AddressBook-Level2: Follow Interface Segregation Principle [LO-ISP]</a>
+        </p>
+        <p>
+          Submission: same as T4A2
+        </p>
+      </div>
+    </div>
+    <div class="activity activity-week5">
+      <h3>T4A5. Use association classes <img src="../images/2stars.png"/></h3>
+      <div>
+        <p>Complete the exercise for the learning outcome :<br>
+          <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level2/blob/master/doc/LearningOutcomes.md#use-association-classes-lo-associationclass" target="_blank">
+            AddressBook-Level2: Use Association Classes [LO-AssociationClass]</a>
+        </p>
+        <p>
+          Submission: same as T4A2
+        </p>
+      </div>
+    </div>
+    
+   <div class="activity activity-week5">
+      <h3>T6A2. Complete V0.0<img src="../images/star.png"/></h3>
+      <div>
+        Complete any remaining parts of V0.0 that you could not finish in the previous week.
+        Transfer the content to the relevant pages in your main repo.
+        <br>
+        Submission: Create a PR from your team repo <code>master</code> branch to
+        <code>https://github.com/nus-cs2103-AY1617S4/addressbook-level4</code>.
+        Name it <code>[T4][Your-Team-ID]</code> 
+      </div>
+    </div>
+	
+	
+	<div class="activity activity-week5">
+      <h3>T5A1. Requirements <img src="../images/star.png"/></h3>
+      <div>
+        <p>Complete the exercises for the learning outcomes: <br>
+
+          <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level3/blob/master/doc/LearningOutcomes.md#utilize-user-stories-lo-userstories" target="_blank">
+            AddressBook-Level3: Utilize User Stories [LO-UserStories]</a><br>
+          <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level3/blob/master/doc/LearningOutcomes.md#utilize-use-cases-lo-usecases" target="_blank">
+            AddressBook-Level3: Utilize Use Cases [LO-UseCases]</a><br>
+          <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level3/blob/master/doc/LearningOutcomes.md#use-non-functional-requirements-lo-nfr" target="_blank">
+            AddressBook-Level3: Use Non Functional Requirements [LO-NFR]</a><br>
+        </p>
+        <p>
+          Submission:
+            Create a PR with your code
+            [<span onclick="getContentUsingAjax('handbook-appendixE-github', '#embedded-week6-pr-steps', 'tutorial-pr-instructions');">
+                        <span class="embedded-link">Instructions</span></span>]
+            <div id="embedded-week6-pr-steps"></div>
+        </p>
+      </div>
+    </div>
+	
+  </div>
+</div>
+
+<div class="tutorial content-week5">
+  <h3 id="tutorial-content-week5" class="buttoned">
+    <span>Tutorial 4: OOP (Intermediate), Requirements, Project V0.0</span></h3>
+  <div>
+    <div class="tutorial tutorial-week5">
+      <h3>Discuss pre-tutorial learning activities</h3>
+      <div>
+        As usual, discuss with tutor/peers pre-tutorial learning activities.<br>
+      </div>
+    </div>
+	
+	
+	<div class="tutorial tutorial-week5">
+      <h3>[After the tutorial] Submit peer evaluations</h3>
+      <div>
+        Note that you need to submit the mid-point peer evaluation for 
+        phase A this week.<br>
+         See additional details under the Deadlines section. Pay attention to
+        <span onclick="getContentUsingAjax('handbook-peerEvaluations', '#embedded-week10-teammates', 'giving-peer-feedback');" class="embedded-link">
+          these guidelines
+        </span>
+        on giving peer feedback. The TEAMMATES peer review will open from 
+        <span class="highlighted"> Mon, 2pm </span>.
+        <div id="embedded-week10-teammates"></div>
+
+      </div>
+    </div>
+	
+<!--    
+    <div class="tutorial tutorial-week5">
+      <h3>[last 15 minutes] Form phase B teams</h3>
+      <div>
+        Follow tutor's directions to form Phase B teams. Before leaving the tutorial,
+        <span class="highlighted">go to IVLE and sign up for the correct phase B teams</span>.<br>
+
+        <div class="additional-info">
+          ATTENTION: Now that you are with your project team, <span class="highlighted">We HIGHLY recommend</span>
+          that you do team activities in the next two tutorials <code>T5A4 (Centralized Workflow)</code> and
+          <code>T6A1 (Work in a 2KLoC code base, as a team)</code> : Doing so will help you to prepare for the
+          project as well as to get a rough measure of the technical competence of your team members.
+          Knowing the competence level of your team members minimize the risk of allocating weak members more
+          responsibilities than they can handle, which can down the whole project.
+        </div>
+      </div>
+    </div>
+    
+    <div class="tutorial tutorial-week5">
+      <h3>[After the tutorial] Submit peer evaluations</h3>
+      <div>
+        Note that you need to submit the final peer evaluation for phase A this week.<br>
+      </div>
+    </div>
+-->    
+  </div>
+</div>
+
 
 <!--
 <div class="deadline content-week5">

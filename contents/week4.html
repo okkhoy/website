@@ -20,10 +20,44 @@
 </div>
 -->
 
+<div class="things-to-do content-week4">
+  <h3 id="things-to-do-content-week4" class="buttoned"><span>Things to do</span></h3>
+  <div>
+  
+	<div class="things-to-do things-to-do-week4">
+      <h3>Read up more about project requirements</h3>
+      <div>
+        Refresh your memory about project requirements:
+        <span onclick="getContentUsingAjax('handbook-project-product', '#embedded-week7-project');"><span
+            class="embedded-link">The Product</span></span> |
+        <span onclick="getContentUsingAjax('handbook-project-scope', '#embedded-week7-project');"><span
+            class="embedded-link">Project Scope</span></span> |
+        <span onclick="getContentUsingAjax('handbook-project-constraints', '#embedded-week7-project');"><span
+            class="embedded-link">Project Constraints</span></span> |
+        <span onclick="getContentUsingAjax('handbook-project-deliverables', '#embedded-week7-project');"><span
+            class="embedded-link">Deliverables</span></span>|
+        <span onclick="getContentUsingAjax('handbook-project-v00', '#embedded-week7-project');"><span
+            class="embedded-link">V0.0</span></span>
+        <div id="embedded-week7-project"></div>
 
+        <p>Project requirements was also covered during lecture 1.</p>
+
+      </div>
+    </div>
+	
+
+    <div class="things-to-do things-to-do-week4">
+      <h3>Configure Eclipse indentation style</h3>
+      <div>
+        Configure Eclipse to automatically convert tabs to 4 spaces.
+      </div>
+    </div>
+  </div>
+</div>
+	
 
 <div class="lecture content-week4">
-    <h3 id="lecture-content-week4" class="buttoned"><span>Lecture 4: More OOP, and getting started with developer testing</span></h3>
+    <h3 id="lecture-content-week4" class="buttoned"><span>Lecture 4: More OOP, and requirements</span></h3>
     <div>
     
     <div class="lecture lecture-week4">
@@ -80,48 +114,43 @@
        </div>
      </div>
      <div class="lecture lecture-week4">
-       <h3>Part 2 - Never Too Early to Test: an Introduction to Early Developer Testing</h3>
-       <div>
-         <table class="padded-borderless lecture-content-table">
-           <tr>
-             <td>
-               <img src="../images/yee ha.png">
-             </td>
-             <td>
-               <p>
-                 <!-- [<a href="../files/handouts/%5bL4P2%5d%20Never%20Too%20Early%20to%20Test%20-%20an%20Introduction%20to%20Early%20Developer%20Testing.pdf" target="_blank">
-                 Handout</a>]  -->
-                 [Slides] 
-                 <!-- [<a target="_blank" href="../files/slides/L4P2.%20Never%20Too%20Early%20to%20Test%20-%20an%20Introduction%20to%20Early%20Developer%20Testing.pptx">Slides</a>]-->
-               </p>
-               <span class="dim">
-                  <p>
-                      Overview: Testing should be done earlier and at lower levels without relying entirely on system testing or higher-level component testing.
-                      API testing can be automated using testing frameworks such as JUnit.
-                      TDD is a unique approach to ensure the testability of the component from the beginning and not as an afterthought.
-                  </p>
-                  <p>
-                      Topics: developer testing, automated unit testing, TDD
-                  </p>
-                </span>
-             </td>
-           </tr>
-         </table>
-         <p>
-           Resources:
-         </p>
-         <ul>
-           <li>
-             <span class="highlighted"><a target="_blank" href="testingFaq.html">Questions about unit testing frequently asked by CS2103 students (and answers)</a></span>
-           </li>
-           <li>
-             More resources given at
-             <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level2/blob/master/doc/LearningOutcomes.md" target="_blank">
-               addressbook-level2</a> (see under testing-related learning outcomes).
-           </li>
-         </ul>
-       </div>
-     </div>
+      <h3>Part 2 - Problem before solution: figuring out requirements</h3>
+      <div>
+        <table class="padded-borderless lecture-content-table">
+          <tr>
+            <td>
+              <img src="../images/specifying.png"  style="width: 249.50px; height: 157.53px;">
+            </td>
+            <td>
+              <p>
+                <!--[<a href="../files/handouts/%5bL5P2%5d%20%20Problem%20before%20Solution%20-%20Figuring%20out%20Requirements.pdf" target="_blank">Handout</a>]-->
+                <!-- [Slides] -->
+                [<a target="_blank" href="../files/slides/L5P2.%20Problem%20before%20solution%20-%20figuring%20out%20requirements.pptx">Slides</a>]
+              </p>
+              <span class="dim">
+            <p>
+                <strong>Overview:</strong> There are many ways to gather, analyze and document requirements.
+            </p>
+            <p>
+                <strong>Topics:</strong> establishing requirements, specifying requirements
+            </p>
+            </span>
+            </td>
+          </tr>
+        </table>
+        <p>
+          Side readings:
+        </p>
+        <ul>
+          <li>
+            Humor :
+            <a href="http://dilbert.com/strip/2003-01-10" target="_blank">Dilbert on user stories</a>,
+            <a href="http://dilbert.com/strip/2001-04-14" target="_blank">Dilbert asks a user for requirements</a>,
+            <a href="http://dilbert.com/strip/2006-01-29" target="_blank"> Alice asks a user for requirements</a>
+          </li>
+        </ul>
+      </div>
+    </div>
 <!--     
      <div class="lecture lecture-week4">
        <h3>[30 minutes] Recap</h3>

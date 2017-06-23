@@ -1,67 +1,54 @@
-<div class="activity content-week11">
-  <h3 id="activity-content-week11" class="buttoned">
-  <span>Pre-Tutorial Learning Activities</span></h3>
-
+<div class="deadline content-week11">
+  <h3 id="deadline1-content-week11" class="buttoned"><span>Deadlines </span></h3>
   <div>
-    
-    <div class="activity activity-week11">
-      <h3>T9A2. Use test case design heuristics <img src="../images/2stars.png"/></h3>
+    <div class="deadline deadline1-week11">
+      <h3>[Wed, 10am] Reach <span onclick="getContentUsingAjax('handbook-project-v05rc', '#embedded-week11-t11a1');">
+              <span class="embedded-link">V0.5rc </span>
+            </span>
+        <div id="embedded-week11-t11a1"></div></h3>
       <div>
-        Refer to the
-        <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level4/blob/master/docs/LearningOutcomes.md#apply-test-case-design-heuristics-lo-testcasedesignheuristics" target="_blank">
-          relevant learning outcome in Address Book Level 4</a> and the relevant lecture handout.
-        Try to apply those heuristics in the test cases you write too. Add extra comments in your code
-        (similar to those in <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level4/blob/master/src/test/java/seedu/address/commons/util/StringUtilTest.java" target="_blank">
-        <code>StringUtilTest.java</code></a>) to show how you applied the heuristics.<br>
-      </div>
+	  </div>
     </div>
-    <div class="activity activity-week11">
-      <h3>T9A3. Measure test coverage <img src="../images/3stars.png"/></h3>
+	
+	
+
+  </div>
+</div>
+
+<div class="things-to-do content-week11">
+  <h3 id="things-to-do-content-week11" class="buttoned"><span>Things to do</span></h3>
+  <div>
+    <div class="things-to-do things-to-do-week11">
+      <h3>Handbook sections to read:</h3>
       <div>
-        Refer to the
-        <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level4/blob/master/docs/LearningOutcomes.md#use-code-coverage-lo-codecoverage" target="_blank">
-          relevant learning outcome in Address Book Level 4</a>.<br>
+        <ul>
+          <li>
+            Project:
+            <span onclick="pullContent('handbook-project-v05', '#embedded-week14-handbook', '[Handbook excerpt] V0.5');">
+              <span class="embedded-link">  V0.5 Requirements </span>|
+            </span>
+            <span onclick="pullContent('handbook-project-retrospective', '#embedded-week14-handbook', '[Handbook excerpt] Project retrospective');">
+              <span class="embedded-link">  Project retrospective </span>
+            </span>
+            <div id="embedded-week14-handbook"></div>
+          </li>
+        </ul>
+      </div>
+   <h3>Common Code Quality Problems</h3>
+      <div>
+      Read the <a href=
+      "https://drive.google.com/open?id=1cabmFQL0mHQrYGlWusu9oRLIpbJVv7jybAhDojVnfng" target="_blank">
+          Common Code Quality Problems </a> and improve your 
+            code quality before the final submission .
       </div>
     </div>
   </div>
 </div>
 
-<div class="tutorial content-week11">
-  <h3 id="tutorial-content-week11" class="buttoned"><span>Tutorial 9: V0.3, CI, Test Coverage, Test Case Design </span></h3>
-  <div>
-    <div class="tutorial tutorial-week11">
-      <h3>Demo V0.3</h3>
-      <div>
-        As was done in V0.2, show evidence of meeting V0.3 requirements in terms of
-        features, testing, documentation, and project management.<br>
-        Remember to use the JAR file in your V0.3 release on GitHub 
-        to demo.
-      </div>
-    </div>
-    <div class="tutorial tutorial-week11">
-      <h3>Test case design heuristics, test coverage</h3>
-      <div>
-        Describe where and how you used test case design heuristics.
-        <br>
-        <br>
-        [Optional] If you have EclEmma installed, show how to use it to 
-        measure test coverage.
-      </div>
-    </div>
-    <div class="tutorial tutorial-week11">
-      <h3>Start dog fooding</h3>
-      <div>
-        If your product is ready for dog fooding, start dog fooding it from this week.<br>
-        If it is not ready yet, bring it to dog-fooding-ready state as soon as possible, latest by V0.4.
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="lecture content-week11">
-  <h3 id="lecture-content-week11" class="buttoned">
-    <span>Lecture 10</span>
-  </h3>
+  <h3 id="lecture-content-week11" class="buttoned"><span>Lecture 9</span></h3>
+
   <div>
     <div class="lecture lecture-week11">
       <h3>Pre-lecture exercise [optional]</h3>
@@ -84,8 +71,107 @@
         </table>
       </div>
     </div>
+	
+	<div class="lecture lecture-week11">
+      <h3>Recap [15 minutes]</h3>
+      <div>
+        [<a href="../files/slides/L9Recap.pptx" target="_blank">Slides</a>]
+      </div>
+    </div>
+	
     <div class="lecture lecture-week11">
-      <h3>Part 1 - Modeling your way out of complexity: Other useful models [30 minutes]</h3>
+      <h3>Part 2 - Deja vu: Using patterns to solve recurring problems [40 minutes]</h3>
+      <div>
+        <table class="padded-borderless lecture-content-table">
+          <tr>
+            <td>
+              <img src="../images/patterns.png">
+            </td>
+            <td>
+              <p>
+                [<a href="../files/handouts/%5bL9P2%5d%20Deja%20vu%20-%20Using%20patterns%20to%20solve%20recurring%20problems.pdf" target="_blank">Handout</a>]
+                [<a href="../files/slides/L9P2.%20Deja%20vu%20-%20Using%20patterns%20to%20solve%20recurring%20problems.pptx" target="_blank">Slides</a>]
+              </p>
+              <span class="dim">
+                <p>
+                <strong>Overview:</strong> Patterns are tried and trusted solutions to recurring problems.
+                Applying right patterns often improves our work products.
+                </p>
+                <p>
+                <strong>Topics:</strong> patterns
+                </p>
+              </span>
+            </td>
+          </tr>
+        </table>
+        <p>
+          Resources:
+        </p>
+        <ul>
+          <li>
+            Something we have already covered, presented as a pattern and an anti-pattern:
+            <a target="_blank" href="http://codebetter.com/jeremymiller/2006/12/03/composed-method-pattern/">
+              Composed method pattern (and Arrowhead anti-pattern)
+            </a>,
+            <a target="_blank" href="http://www.codinghorror.com/blog/2006/01/flattening-arrow-code.html">
+              another take one the same issue
+            </a>
+            - Note that these code-level patterns are sometimes called <em>coding idioms</em>.
+          </li>
+          <li>
+            Some good books on design patterns:
+            <a target="_blank"
+               href="http://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612">
+              The famous ‘Gang of Four’ patterns book
+            </a>,
+            <a target="_blank" href="http://www.amazon.com/First-Design-Patterns-Elisabeth-Freeman/dp/0596007124/">
+              Head first design patterns
+            </a>
+          </li>
+          <li>
+            Singleton is a neat pattern and it is easy to explain too. That is why it is used often to
+            illustrate the concept of design patterns. However, there is a concern that Singletons are evil,
+            especially when used excessively.
+            <a target="_blank" href="http://blogs.msdn.com/b/scottdensmore/archive/2004/05/25/140827.aspx">
+              Here’s a blog post (from MSDN blogs) that supports that concern</a>.
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+	 <div class="lecture lecture-week11">
+      <h3>Part 2 - Less work, more results - reusing existing artifacts [20 minutes]</h3>
+      <div>
+        <table class="padded-borderless lecture-content-table">
+          <tr>
+            <td>
+              <img src="../images/frameworks.png">
+            </td>
+            <td>
+              <p>
+                [<a
+                  href="../files/handouts/%5bL10P3%5d%20Less%20work,%20more%20results%20-%20reusing%20existing%20artifacts.pdf"
+                  target="_blank">Handout</a>]
+                [<a href="../files/slides/L10P3.%20Less%20work,%20more%20results%20-%20reusing%20existing%20artifacts.pptx"
+                  target="_blank">Slides</a>]
+              </p>
+              <span class="dim">
+                <p>
+                    <strong>Overview:</strong> Often, we reuse platforms, frameworks,
+                    and libraries instead of building everything from scratch.
+                </p>
+                <p>
+                    <strong>Topics:</strong> platforms, frameworks and libraries
+                </p>
+                </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+	
+    <div class="lecture lecture-week11">
+      <h3>Part 3 - Modeling your way out of complexity: Other useful models [30 minutes]</h3>
       <div>
         <table class="padded-borderless lecture-content-table">
           <tr>
@@ -115,118 +201,106 @@
         </table>
       </div>
     </div>
-    <div class="lecture lecture-week11">
-      <h3>Part 2 - One destination, many paths: software process models [35 minutes]</h3>
+    
+	
+
+    
+  </div>
+</div>
+
+
+
+
+
+<div class="activity content-week11">
+  <h3 id="activity-content-week11" class="buttoned">
+  <span>Pre-Tutorial Learning Activities</span></h3>
+
+  <div>
+    <div class="activity activity-week11">
+      <h3>T11A1. Reach V0.5rc <img src="../images/star.png"/></h3>
       <div>
-        <table class="padded-borderless lecture-content-table">
-          <tr>
-            <td>
-              <img src="../images/processes.png">
-            </td>
-            <td>
-              <p>
-                [<a
-                  href="../files/handouts/%5bL10P2%5d%20One%20Destination,%20Many%20Paths%20-%20Software%20Process%20Models.pdf"
-                  target="_blank">Handout</a>]
-                [<a href="../files/slides/L10P2.%20One%20destination,%20many%20paths%20-%20software%20process%20models.pptx"
-                  target="_blank">Slides</a>]
-              </p>
-              <div class="dim">
-                <p>
-                  <strong>Overview:</strong> There are numerous software process models to choose from.
-                </p>
-                <p>
-                  <strong>Topics:</strong> SDLC process models.
-                </p>
-              </div>
-            </td>
-          </tr>
-        </table>
+        Follow <span onclick="getContentUsingAjax('handbook-project-v05rc', '#embedded-week11-t11a1');">
+              <span class="embedded-link">V0.5rc Requirements</span>
+            </span>
+        <div id="embedded-week11-t11a1"></div>
+      </div>
+    </div>
+   
+    <div class="activity activity-week11">
+      <h3>T11A3. Relate reuse mechanisms to your project <img src="../images/2stars.png"/></h3>
+      <div>
         <p>
-          Resources:
+          Find <i>platforms</i>, <i>frameworks</i>, and <i>libraries</i> you are using in the project.<br>
+          What are other alternative/additional platforms/frameworks/libraries you could have used in the project?
         </p>
+      </div>
+    </div>
+    <div class="activity activity-week11">
+      <h3>T11A4. Use Activity Diagrams and OO Domain Models <img src="../images/2stars.png"/></h3>
+      <div>
+        <p>
+          Use Activity Diagrams and/or Object Oriented Domain Models to explain the problem domain or the
+          design of your project.<br>
+        </p>
+      </div>
+    </div>
+    <div class="activity activity-week11">
+      <h3>T11A5. Relate other UML models to the project <img src="../images/3stars.png"/></h3>
+      <div>
+        <p>
+          Relate other UML models (the non-examinable ones such as State Machine Diagrams) to the project.<br>
+          e.g. are they applicable to the project?
+        </p>
+      </div>
+    </div>
+    <div class="activity activity-week11">
+      <h3>T10A1. Do a peer code review <img src="../images/2stars.png"/></h3>
+      <div>
         <ul>
-          <li>
-            [Blog post]
-            <a target="_blank" href="http://stephenwalther.com/archive/2012/08/17/scrum-in-5-minutes.aspx">
-              Scrum in 5 minutes </a>, by Stephen Walther
-          </li>
-          <li>
-            <a target="_blank" href="http://www.extremeprogramming.org/rules.html">
-              eXtreme Programming Rules </a>, from the XP official website
-          </li>
-          <li>
-            [Blog post]
-            <a target="_blank"
-               href="http://www.base36.com/2012/12/agile-waterfall-methodologies-a-side-by-side-comparison/">
-              Agile vs Waterfall </a> - one of
-            <a target="_blank" href="https://www.google.com.sg/webhp#q=waterfall+vs+agile">
-              many articles </a> comparing the two
-          </li>
-          <li>
-            [Blog post] <a target="_blank" href="http://ariya.ofilabs.com/2012/01/small-scale-software-craftsmanship.html">
-              Some process elements useful for not so huge projects </a>, by Ariya Hidayat
-          </li>
-          <li>
-            [Web article] <a target="_blank"
-               href="http://www.developer.com/tech/6-practical-agile-techniques-you-can-start-using-today.html">
-              6 Practical Agile Techniques You Can Start Using Today </a>, by Ulf Eriksson
-          </li>
+          <li>Refer to the learning outcome
+            <a href="https://github.com/nus-cs2103-AY1617S4/addressbook-level4/blob/master/docs/LearningOutcomes.md#do-code-reviews-lo-codereview" target="_blank">
+              [LO-CodeReview]</a></li>
+        <li>For at least one PR created by you, get a team member to do a code review (on GitHub) before merging the PR.
+        </li>
+        <li>Review at least one PR created by a team member.</li>
         </ul>
       </div>
     </div>
-    <div class="lecture lecture-week11">
-      <h3>Part 3 - Less work, more results - reusing existing artifacts [20 minutes]</h3>
-      <div>
-        <table class="padded-borderless lecture-content-table">
-          <tr>
-            <td>
-              <img src="../images/frameworks.png">
-            </td>
-            <td>
-              <p>
-                [<a
-                  href="../files/handouts/%5bL10P3%5d%20Less%20work,%20more%20results%20-%20reusing%20existing%20artifacts.pdf"
-                  target="_blank">Handout</a>]
-                [<a href="../files/slides/L10P3.%20Less%20work,%20more%20results%20-%20reusing%20existing%20artifacts.pptx"
-                  target="_blank">Slides</a>]
-              </p>
-              <span class="dim">
-                <p>
-                    <strong>Overview:</strong> Often, we reuse platforms, frameworks,
-                    and libraries instead of building everything from scratch.
-                </p>
-                <p>
-                    <strong>Topics:</strong> platforms, frameworks and libraries
-                </p>
-                </span>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-    <div class="lecture lecture-week11">
-      <h3>Recap [20 minutes] </h3>
-      <div>
-        [<a href="../files/slides/L10Recap.pptx" target="_blank">Slides</a>]
-      </div>
-    </div>
+	
   </div>
 </div>
-<div class="deadline content-week11">
-  <h3 id="deadline1-content-week11" class="buttoned"><span>Deadlines </span></h3>
+
+<div class="tutorial content-week11">
+  <h3 id="tutorial-content-week11" class="buttoned"><span>Tutorial 9: V0.5rc, Reuse  </span></h3>
   <div>
-    <div class="deadline deadline1-week11">
-      <h3>[Tue (<span class="date-marker" week="11" day="2"></span>) 23:59] Complete phase B mid-point peer evaluation</h3>
+     <div class="tutorial tutorial-week13">
+      <h3>Demo V0.5rc</h3>
       <div>
-        Similar to before. Pay attention to
-        <span onclick="getContentUsingAjax('handbook-peerEvaluations', '#embedded-week11-teammates', 'giving-peer-feedback');" class="embedded-link">
-          these guidelines
-        </span>
-        on giving peer feedback.
-        <div id="embedded-week11-teammates"></div>
+        Do the demo as specified in V0.5rc requirements.<br>
+      </div>
+    </div>
+    <div class="tutorial tutorial-week13">
+      <h3>OODM, Activity Diagrams</h3>
+      <div>
+        Discuss OODMs or Activity Diagrams you created for the project, if any.
+      </div>
+    </div>
+    <div class="tutorial tutorial-week13">
+      <h3>Agile processes</h3>
+      <div>
+        Relate XP rules and Scrum practices to the project.
+      </div>
+    </div>
+    <div class="tutorial tutorial-week13">
+      <h3>Reuse mechanisms</h3>
+      <div>
+        Discuss the libraries, frameworks, and platforms you are using (or could be using) for the project.
       </div>
     </div>
   </div>
 </div>
+
+
+
 
